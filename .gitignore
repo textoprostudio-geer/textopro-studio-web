@@ -1,0 +1,25 @@
+# Respaldos locales / archivos huérfanos: no forman parte del repositorio ni de la publicación
+# PNG originales de las imágenes optimizadas a WebP
+assets/images/digitalizacion-transformacion.png
+assets/images/ia-inteligencia-artificial.png
+assets/images/proyectos-apc-connect.png
+assets/images/servicios-comunicacion-marketing.png
+
+# Logos no usados por el sitio
+assets/logo/isotipo.png
+assets/logo/logo-principal-claro.png
+assets/logo-circle.png
+assets/logo-textopro.png
+assets/logo fondo degradado.png
+
+# Carpeta de respaldo local (por si se vuelve a copiar dentro del proyecto)
+_respaldo-local/
+
+# Sistema / editor / secretos
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/
+.env
+.env.*
+*.log
