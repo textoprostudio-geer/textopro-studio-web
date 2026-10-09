@@ -102,12 +102,11 @@ body {
 .logo-circle {
   width: 120px;
   height: 120px;
-  border-radius: 999px;
+  flex-shrink: 0; /* el logo conserva su tamaño; el texto del encabezado es el que se ajusta */
   background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .logo-img {
@@ -467,29 +466,13 @@ body {
 }
 
 
+/* Logotipo oficial: se muestra tal cual (sin filtros, opacidad ni modos de fusión).
+   El WebP ya trae su propio halo con transparencia, por eso no hay recorte ni sombra extra. */
 .logo-circle .logo-img {
-  width: 92%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
-}
-
-
-
-/* === LOGO BOOST: azul eléctrico premium (sin cambiar tamaño) === */
-.logo-circle {
-  box-shadow:
-    0 0 14px rgba(0, 229, 255, .55),
-    0 0 28px rgba(0, 123, 255, .35);
-}
-
-.logo-circle img,
-.logo-img {
-  filter:
-    saturate(1.7)
-    brightness(1.12)
-    contrast(1.15)
-    drop-shadow(0 0 10px rgba(0, 229, 255, .55))
-    drop-shadow(0 0 22px rgba(0, 123, 255, .35));
 }
 
 
@@ -1078,6 +1061,15 @@ body.nav-open{
   font-size:0.85rem;
 }
 .footer-inner{ padding-top: 1rem; }
+
+/* Pie: .footer-grid anula el padding lateral de .container; se restituye solo cuando el
+   contenedor llega a los bordes de la pantalla (mismos valores que .container). Escritorio ancho, igual. */
+@media (max-width: 1120px){
+  .footer-grid{ padding-inline: 1.6rem; }
+}
+@media (max-width: 640px){
+  .footer-grid{ padding-inline: 1.2rem; }
+}
 
 /* ===== V1.3 — Fase 2.1: página Servicios ===== */
 
