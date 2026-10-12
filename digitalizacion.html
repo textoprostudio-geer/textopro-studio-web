@@ -21,13 +21,16 @@
   <meta name="twitter:card" content="summary" />
 
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/vivo-base.css" />
+  <link rel="stylesheet" href="css/vivo-digitalizacion.css" />
+  <noscript><link rel="stylesheet" href="css/nojs.css" /></noscript>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="topbar">
     <div class="container topbar-inner">
       <a href="index.html" class="logo-block">
-        <div class="logo-circle"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" class="logo-img" /></div>
+        <div class="logo-circle"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" width="400" height="400" class="logo-img" /></div>
         <div class="logo-text">
           <span class="brand-main">TextoPro Studio</span>
           <span class="brand-tagline">Donde tus ideas alcanzan su mejor versión</span>
@@ -40,7 +43,7 @@
         <span class="nav-toggle-bar"></span>
       </button>
 
-      <nav class="nav" id="siteNav">
+      <nav class="nav" id="siteNav" aria-label="Navegación principal">
         <a href="index.html#soluciones">Soluciones</a>
         <a href="index.html#digitalizacion" aria-current="page">Digitalización</a>
         <a href="index.html#ia">IA</a>
@@ -72,14 +75,17 @@
         </div>
         <div class="hero-visual">
           <div class="hero-visual-glow" aria-hidden="true"></div>
-          <div class="mock-dashboard mock-dashboard--hero" aria-hidden="true">
-            <div class="mock-dashboard-header">
-              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <div class="mock-dashboard mock-dashboard--hero">
+            <div aria-hidden="true">
+              <div class="mock-dashboard-header">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              </div>
+              <div class="hero-stream"><span class="hero-stream-label">Consulta</span><div class="mock-bar" style="width:82%"></div></div>
+              <div class="hero-stream"><span class="hero-stream-label">Seguimiento</span><div class="mock-bar" style="width:58%"></div></div>
+              <div class="hero-stream"><span class="hero-stream-label">Operación</span><div class="mock-bar" style="width:70%"></div></div>
+              <div class="mock-chip">Proceso digitalizado</div>
             </div>
-            <div class="mock-bar" style="width:82%"></div>
-            <div class="mock-bar" style="width:58%"></div>
-            <div class="mock-bar" style="width:70%"></div>
-            <div class="mock-chip">Proceso digitalizado</div>
+            <a class="card-link hero-stream-link" href="#transformacion">Ver la transformación Antes/Después <span aria-hidden="true">↓</span></a>
           </div>
           <p class="small-note">* Composición conceptual (no es un caso real).</p>
         </div>
@@ -162,28 +168,67 @@
       <div class="container">
         <h2 class="section-title center">De la dispersión a la estructura</h2>
         <p class="section-subtitle center">Representación conceptual, no un caso real ni una cifra de resultado.</p>
+        <div class="ba" id="baDemo" data-state="before">
+          <div class="ba-head">
+            <span class="vivo-badge">Demostración conceptual</span>
+            <p class="ba-status" id="baStatus" role="status" aria-live="polite">Antes: operación dispersa</p>
+          </div>
+
+          <div class="ba-stage" id="baStage" style="--p:0" aria-hidden="true">
+            <div class="ba-frame"><span class="ba-dots"><i></i><i></i><i></i></span><span class="ba-frame-title">Panel único</span></div>
+            <svg class="ba-lines" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+              <g class="ba-tangle">
+                <path d="M19 24 C 32 66, 42 8, 52 16 S 76 52, 81 34"/>
+                <path d="M19 70 C 26 46, 36 80, 46 56 S 70 84, 81 76"/>
+                <path d="M19 24 C 12 50, 28 62, 46 56"/>
+                <path d="M52 16 C 66 30, 60 48, 46 56 S 76 60, 81 34"/>
+              </g>
+              <g class="ba-order">
+                <path d="M20 40 H80 M20 66 H80 M20 40 V66 M50 40 V66 M80 40 V66"/>
+                <path d="M20 66 V84 M50 66 V84 M80 66 V84 M12 84 H88"/>
+              </g>
+            </svg>
+            <div class="ba-item" style="--x0:19;--y0:24;--r0:-11;--x1:20;--y1:40"><span class="ba-t0">Hoja de cálculo</span><span class="ba-t1">Datos en un solo lugar</span></div>
+            <div class="ba-item" style="--x0:52;--y0:16;--r0:8;--x1:50;--y1:40"><span class="ba-t0">Mensajes sueltos</span><span class="ba-t1">Seguimiento ordenado</span></div>
+            <div class="ba-item" style="--x0:81;--y0:34;--r0:-7;--x1:80;--y1:40"><span class="ba-t0">Archivos</span><span class="ba-t1">Información estructurada</span></div>
+            <div class="ba-item" style="--x0:19;--y0:70;--r0:12;--x1:20;--y1:66"><span class="ba-t0">Notas</span><span class="ba-t1">Tareas registradas</span></div>
+            <div class="ba-item" style="--x0:46;--y0:56;--r0:-14;--x1:50;--y1:66"><span class="ba-t0">Pedidos a mano</span><span class="ba-t1">Proceso digital</span></div>
+            <div class="ba-item" style="--x0:81;--y0:76;--r0:6;--x1:80;--y1:66"><span class="ba-t0">Otra herramienta</span><span class="ba-t1">Herramientas conectadas</span></div>
+            <div class="ba-chips"><span>Consulta</span><span>Seguimiento</span><span>Operación</span></div>
+          </div>
+
+          <div class="ba-controls" hidden>
+            <button type="button" class="ba-btn" data-to="0" aria-pressed="true">Antes</button>
+            <input type="range" class="ba-range" id="baRange" min="0" max="100" step="5" value="0" aria-label="Transformación de una operación dispersa a un proceso digital organizado" aria-valuetext="Antes: operación dispersa" />
+            <button type="button" class="ba-btn" data-to="100" aria-pressed="false">Después</button>
+          </div>
+
+          <div class="split-block ba-cols">
+            <div class="ba-col ba-col--before">
+              <h3 class="transformacion-label">Antes</h3>
+              <div class="motion-strip motion-strip--vertical" role="list" aria-label="Antes: información dispersa, procesos manuales, seguimiento fragmentado">
+                <span class="motion-node" role="listitem">Información dispersa</span>
+                <span class="motion-node" role="listitem">Procesos manuales</span>
+                <span class="motion-node" role="listitem">Seguimiento fragmentado</span>
+              </div>
+            </div>
+            <div class="ba-col ba-col--after">
+              <h3 class="transformacion-label">Después</h3>
+              <div class="motion-strip motion-strip--vertical" role="list" aria-label="Después: información estructurada, proceso digital, consulta y seguimiento">
+                <span class="motion-node" role="listitem">Información estructurada</span>
+                <span class="motion-node" role="listitem">Proceso digital</span>
+                <span class="motion-node motion-node--accent" role="listitem">Consulta / seguimiento / operación</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="small-note ba-note">* Demostración conceptual: ilustra la idea de pasar de una operación dispersa a un proceso digital organizado. No es un sistema en funcionamiento ni un caso real, y los elementos son ejemplos genéricos.</p>
+        </div>
+
         <div class="section-visual">
           <img src="assets/images/digitalizacion-transformacion.webp" alt="Ilustración conceptual: documentos y hojas de cálculo dispersos sobre un escritorio fluyen hacia un panel digital en una laptop, con el texto «De la operación dispersa a un ecosistema digital»." width="1672" height="941" class="section-img" loading="lazy" decoding="async" />
         </div>
         <p class="small-note">* Imagen conceptual de la transformación de una operación dispersa a una digital (no es un caso real ni un resultado).</p>
-        <div class="split-block">
-          <div>
-            <h3 class="transformacion-label">Antes</h3>
-            <div class="motion-strip motion-strip--vertical" role="list" aria-label="Antes: información dispersa, procesos manuales, seguimiento fragmentado">
-              <span class="motion-node" role="listitem">Información dispersa</span>
-              <span class="motion-node" role="listitem">Procesos manuales</span>
-              <span class="motion-node" role="listitem">Seguimiento fragmentado</span>
-            </div>
-          </div>
-          <div>
-            <h3 class="transformacion-label">Después</h3>
-            <div class="motion-strip motion-strip--vertical" role="list" aria-label="Después: información estructurada, proceso digital, consulta y seguimiento">
-              <span class="motion-node" role="listitem">Información estructurada</span>
-              <span class="motion-node" role="listitem">Proceso digital</span>
-              <span class="motion-node motion-node--accent" role="listitem">Consulta / seguimiento / operación</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -272,7 +317,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <div class="logo-circle footer-logo"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" class="logo-img" /></div>
+        <div class="logo-circle footer-logo"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" width="400" height="400" class="logo-img" /></div>
         <span class="brand-main">TextoPro Studio</span>
       </div>
       <nav class="footer-nav" aria-label="Navegación del pie de página">
@@ -311,5 +356,7 @@
   </div>
 
 <script src="js/main.js" defer></script>
+<script src="js/vivo-base.js" defer></script>
+<script src="js/vivo-digitalizacion.js" defer></script>
 </body>
 </html>
