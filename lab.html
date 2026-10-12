@@ -21,13 +21,14 @@
   <meta name="twitter:card" content="summary" />
 
   <link rel="stylesheet" href="css/styles.css" />
+  <noscript><link rel="stylesheet" href="css/nojs.css" /></noscript>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="topbar">
     <div class="container topbar-inner">
       <a href="index.html" class="logo-block">
-        <div class="logo-circle"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" class="logo-img" /></div>
+        <div class="logo-circle"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" width="400" height="400" class="logo-img" /></div>
         <div class="logo-text">
           <span class="brand-main">TextoPro Studio</span>
           <span class="brand-tagline">Donde tus ideas alcanzan su mejor versión</span>
@@ -40,7 +41,7 @@
         <span class="nav-toggle-bar"></span>
       </button>
 
-      <nav class="nav" id="siteNav">
+      <nav class="nav" id="siteNav" aria-label="Navegación principal">
         <a href="index.html#soluciones">Soluciones</a>
         <a href="index.html#digitalizacion">Digitalización</a>
         <a href="index.html#ia">IA</a>
@@ -87,10 +88,11 @@
 
     <section id="generador" class="section" data-reveal>
       <div class="container">
-        <span class="badge-soon">V1 · Motor de plantillas</span>
+        <span class="badge-available">V1 · Motor de plantillas</span>
         <h2 class="section-title">Generador de anuncios</h2>
         <p class="section-subtitle">Completa tres datos y genera varias propuestas a partir de estructuras de copy predefinidas.</p>
         <p class="section-note">Esta versión no utiliza IA generativa.</p>
+        <noscript><p class="section-note">El generador necesita JavaScript para funcionar. Actívalo en tu navegador para usarlo.</p></noscript>
 
         <div class="split-block lab-tool">
           <form class="contact-form lab-form" id="labForm" novalidate>
@@ -125,7 +127,7 @@
             <div class="lab-results" id="labResults" aria-live="polite">
               <div class="lab-results-empty" id="labResultsEmpty">
                 <p>Tu próxima propuesta aparecerá aquí.</p>
-                <p class="section-note">Completa los datos de arriba para comenzar.</p>
+                <p class="section-note">Completa los tres datos para comenzar.</p>
               </div>
             </div>
             <div class="section-cta" id="labRegenerateWrap" hidden>
@@ -164,17 +166,17 @@
         <h2 class="section-title">Esto es solo el comienzo.</h2>
         <div class="cards-grid">
           <article class="card">
-            <span class="badge-available">Disponible</span>
+            <span class="badge-available" aria-hidden="true">Disponible</span>
             <h3>Disponible</h3>
-            <p>Generadores y herramientas digitales simples, sin registro.</p>
+            <p>El generador de anuncios V1, gratis y sin registro.</p>
           </article>
           <article class="card">
-            <span class="badge-soon">En desarrollo</span>
+            <span class="badge-soon" aria-hidden="true">En desarrollo</span>
             <h3>En desarrollo</h3>
             <p>Herramientas potenciadas por inteligencia artificial.</p>
           </article>
           <article class="card">
-            <span class="badge-vision">Visión</span>
+            <span class="badge-vision" aria-hidden="true">Visión</span>
             <h3>Visión</h3>
             <p>Un ecosistema de herramientas y agentes especializados para diferentes necesidades.</p>
           </article>
@@ -185,7 +187,7 @@
     <section id="conexion-ia" class="section section-alt" data-reveal>
       <div class="container">
         <h2 class="section-title center">¿Y si el generador pudiera entender el contexto?</h2>
-        <p class="section-subtitle center">La siguiente evolución de Lab será incorporar inteligencia artificial para trabajar con mayor contexto y flexibilidad. Todavía no está implementada.</p>
+        <p class="section-subtitle center">La siguiente evolución prevista de Lab es incorporar inteligencia artificial para trabajar con mayor contexto y flexibilidad. Todavía no está implementada.</p>
         <div class="section-cta center">
           <a class="btn-secondary" href="ia.html">Conoce TextoPro AI <span aria-hidden="true">→</span></a>
         </div>
@@ -207,7 +209,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <div class="logo-circle footer-logo"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" class="logo-img" /></div>
+        <div class="logo-circle footer-logo"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" width="400" height="400" class="logo-img" /></div>
         <span class="brand-main">TextoPro Studio</span>
       </div>
       <nav class="footer-nav" aria-label="Navegación del pie de página">
