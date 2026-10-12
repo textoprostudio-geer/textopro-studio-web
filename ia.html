@@ -21,13 +21,15 @@
   <meta name="twitter:card" content="summary" />
 
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/vivo-ia.css" />
+  <noscript><link rel="stylesheet" href="css/nojs.css" /></noscript>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="topbar">
     <div class="container topbar-inner">
       <a href="index.html" class="logo-block">
-        <div class="logo-circle"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" class="logo-img" /></div>
+        <div class="logo-circle"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" width="400" height="400" class="logo-img" /></div>
         <div class="logo-text">
           <span class="brand-main">TextoPro Studio</span>
           <span class="brand-tagline">Donde tus ideas alcanzan su mejor versión</span>
@@ -40,7 +42,7 @@
         <span class="nav-toggle-bar"></span>
       </button>
 
-      <nav class="nav" id="siteNav">
+      <nav class="nav" id="siteNav" aria-label="Navegación principal">
         <a href="index.html#soluciones">Soluciones</a>
         <a href="index.html#digitalizacion">Digitalización</a>
         <a href="index.html#ia" aria-current="page">IA</a>
@@ -73,15 +75,18 @@
         </div>
         <div class="hero-visual">
           <div class="hero-visual-glow" aria-hidden="true"></div>
-          <div class="mock-dashboard mock-dashboard--ai" aria-hidden="true">
-            <div class="mock-dashboard-header">
+          <div class="mock-dashboard mock-dashboard--ai">
+            <div class="mock-dashboard-header" aria-hidden="true">
               <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
             </div>
-            <p class="ai-console-label">Vista conceptual</p>
-            <p class="ai-console-line">"Quiero mejorar cómo comunico mi negocio."</p>
-            <p class="ai-console-line ai-console-line--muted">Analizando contexto...</p>
-            <p class="ai-console-line ai-console-line--muted">Entendiendo necesidad...</p>
-            <p class="ai-console-line ai-console-line--accent">Proponiendo siguiente paso...</p>
+            <p class="ai-console-label" id="aiTraceLabel">Vista conceptual · recorrido</p>
+            <ol class="ai-trace" aria-labelledby="aiTraceLabel">
+              <li><a class="ai-trace-step" href="#aiFlow" data-aiflow-step="1"><span class="ai-trace-n" aria-hidden="true">01</span><span class="ai-trace-body"><strong>Entrada</strong><span>"Quiero mejorar cómo comunico mi negocio."</span></span></a></li>
+              <li><a class="ai-trace-step" href="#aiFlow" data-aiflow-step="2"><span class="ai-trace-n" aria-hidden="true">02</span><span class="ai-trace-body"><strong>Agente</strong><span>Analizando contexto y necesidad...</span></span></a></li>
+              <li><a class="ai-trace-step" href="#aiFlow" data-aiflow-step="3"><span class="ai-trace-n" aria-hidden="true">03</span><span class="ai-trace-body"><strong>Herramientas</strong><span>Preparando un borrador...</span></span></a></li>
+              <li><a class="ai-trace-step ai-trace-step--accent" href="#aiFlow" data-aiflow-step="4"><span class="ai-trace-n" aria-hidden="true">04</span><span class="ai-trace-body"><strong>Resultado</strong><span>Proponiendo siguiente paso...</span></span></a></li>
+            </ol>
+            <p class="ai-trace-hint">Elige un paso para verlo en el recorrido conceptual.</p>
           </div>
           <p class="small-note">* Vista conceptual — TextoPro AI todavía no está conectado en el sitio. No es un chat funcional.</p>
         </div>
@@ -158,6 +163,37 @@
           <span class="motion-node" role="listitem">Reglas</span>
           <span class="motion-node" role="listitem">Agente</span>
           <span class="motion-node motion-node--accent" role="listitem">Acción</span>
+        </div>
+
+        <div class="aiflow" id="aiFlow">
+          <div class="aiflow-head">
+            <h3 class="aiflow-title">Un recorrido conceptual</h3>
+            <p class="aiflow-labels"><span class="aiflow-badge">Demostración conceptual</span><span class="badge-soon">TextoPro AI: en desarrollo</span></p>
+          </div>
+          <ol class="aiflow-steps">
+            <li class="aiflow-step" data-title="Entrada">
+              <span class="aiflow-n" aria-hidden="true">01</span>
+              <h4>Entrada</h4>
+              <p>Una persona plantea una necesidad o un objetivo, con el contexto disponible.</p>
+              <p class="aiflow-ex">Ejemplo ilustrativo: «Quiero mejorar cómo comunico mi negocio.»</p>
+            </li>
+            <li class="aiflow-step" data-title="Agente">
+              <span class="aiflow-n" aria-hidden="true">02</span>
+              <h4>Agente</h4>
+              <p>Un agente especializado interpreta el objetivo, considera el contexto y sigue las reglas definidas para su función.</p>
+            </li>
+            <li class="aiflow-step" data-title="Herramientas">
+              <span class="aiflow-n" aria-hidden="true">03</span>
+              <h4>Herramientas</h4>
+              <p>Recurre a las herramientas habilitadas para esa función, por ejemplo para consultar información o preparar un borrador.</p>
+            </li>
+            <li class="aiflow-step" data-title="Resultado">
+              <span class="aiflow-n" aria-hidden="true">04</span>
+              <h4>Resultado</h4>
+              <p>Entrega una propuesta o una acción concreta que sirva como siguiente paso.</p>
+            </li>
+          </ol>
+          <p class="small-note aiflow-note">* Demostración conceptual: ilustra de forma genérica cómo podría recorrer una necesidad un agente especializado. TextoPro AI está en desarrollo: no es un agente funcional hoy, no se conecta a ningún servicio y los ejemplos no son resultados reales.</p>
         </div>
       </div>
     </section>
@@ -258,7 +294,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <div class="logo-circle footer-logo"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" class="logo-img" /></div>
+        <div class="logo-circle footer-logo"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" width="400" height="400" class="logo-img" /></div>
         <span class="brand-main">TextoPro Studio</span>
       </div>
       <nav class="footer-nav" aria-label="Navegación del pie de página">
@@ -297,5 +333,6 @@
   </div>
 
 <script src="js/main.js" defer></script>
+<script src="js/vivo-ia.js" defer></script>
 </body>
 </html>

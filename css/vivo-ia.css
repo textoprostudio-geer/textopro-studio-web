@@ -1,0 +1,296 @@
+/* TextoPro Studio — Tecnología Viva · página IA: recorrido conceptual Entrada → Agente → Herramientas → Resultado.
+   Módulo propio de ia.html (no depende de vivo.css). Sin JavaScript: se ve como una lista de 4 pasos. */
+
+.aiflow{
+  scroll-margin-top: 130px;
+  margin-top: 2.2rem;
+  padding: 1.6rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(138, 180, 255, 0.25);
+  background: linear-gradient(180deg, #08122b 0%, #060b1c 100%);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+.aiflow-head{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem 1rem;
+  margin-bottom: 1.2rem;
+}
+.aiflow-title{ margin: 0; font-size: 1.15rem; }
+.aiflow-labels{ display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 0; }
+.aiflow-badge{
+  display: inline-flex;
+  padding: 0.18rem 0.7rem;
+  border: 1px solid rgba(110, 231, 255, 0.4);
+  border-radius: 999px;
+  color: #6ee7ff;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Sin JS: lista de 4 pasos */
+.aiflow-steps{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+.aiflow-step{
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: rgba(13, 15, 24, 0.7);
+}
+.aiflow-n{ display: block; margin-bottom: 0.4rem; font-size: 0.74rem; letter-spacing: 0.08em; color: var(--accent); }
+.aiflow-step h4{ margin: 0 0 0.35rem; font-size: 1rem; }
+.aiflow-step p{ margin: 0; color: var(--muted); font-size: 0.88rem; }
+.aiflow-step .aiflow-ex{ margin-top: 0.5rem; color: var(--tp-silver); font-size: 0.8rem; font-style: italic; }
+
+/* Con JS: riel interactivo + un panel de detalle */
+/* Todos los pasos comparten la misma celda: la altura se reserva para el más largo (sin saltos de diseño) */
+.aiflow.is-live .aiflow-steps{ display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; }
+.aiflow.is-live .aiflow-step{ grid-area: 1 / 1; padding: 1.1rem 1.3rem; visibility: hidden; opacity: 0; }
+.aiflow.is-live .aiflow-step.is-active{ visibility: visible; opacity: 1; }
+.aiflow.is-live .aiflow-step.is-entering{ animation: aiflow-in 0.35s ease; }
+@keyframes aiflow-in{ from{ opacity: 0; transform: translateY(6px); } to{ opacity: 1; transform: none; } }
+
+.aiflow-rail{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 1.2rem;
+}
+/* línea que une los 4 nodos (del centro del primero al centro del último) */
+.aiflow-rail::before{
+  content: "";
+  position: absolute;
+  left: 12.5%;
+  right: 12.5%;
+  top: 28px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(110, 231, 255, 0.55), rgba(50, 177, 255, 0.25));
+}
+/* pulso sutil que recorre el flujo */
+.aiflow-pulse{
+  position: absolute;
+  top: 24px;
+  left: 12.5%;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  border-radius: 50%;
+  background: #6ee7ff;
+  box-shadow: 0 0 14px 3px rgba(110, 231, 255, 0.8);
+  pointer-events: none;
+  animation: aiflow-travel 6s ease-in-out infinite;
+}
+@keyframes aiflow-travel{
+  0%{ left: 12.5%; opacity: 0; }
+  10%{ opacity: 1; }
+  90%{ opacity: 1; }
+  100%{ left: 87.5%; opacity: 0; }
+}
+.aiflow.is-paused .aiflow-pulse,
+.aiflow.is-paused .aiflow-node[aria-selected="true"] .aiflow-dot,
+.aiflow.is-offscreen .aiflow-pulse,
+.aiflow.is-offscreen .aiflow-node[aria-selected="true"] .aiflow-dot{ animation-play-state: paused; }
+
+.aiflow-node{
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0 0.2rem 0.4rem;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.aiflow-dot{
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba(138, 180, 255, 0.4);
+  background: #0a1430;
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.aiflow-node:hover{ color: var(--text); }
+.aiflow-node:hover .aiflow-dot{ border-color: #6ee7ff; }
+.aiflow-node[aria-selected="true"]{ color: var(--text); }
+.aiflow-node[aria-selected="true"] .aiflow-dot{
+  border-color: #6ee7ff;
+  background: #0a2150;
+  box-shadow: 0 0 0 0 rgba(50, 177, 255, 0.55), 0 0 20px rgba(50, 177, 255, 0.4);
+  animation: aiflow-ring 2.6s ease-out infinite;
+}
+@keyframes aiflow-ring{
+  0%{ box-shadow: 0 0 0 0 rgba(50, 177, 255, 0.55), 0 0 20px rgba(50, 177, 255, 0.4); }
+  70%, 100%{ box-shadow: 0 0 0 14px rgba(50, 177, 255, 0), 0 0 20px rgba(50, 177, 255, 0.4); }
+}
+
+.aiflow-bar{ display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1rem; }
+.aiflow-nav{ display: flex; align-items: center; gap: 0.5rem; }
+.aiflow-btn{
+  min-height: 44px;
+  padding: 0 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(138, 180, 255, 0.4);
+  background: rgba(7, 14, 36, 0.85);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.aiflow-btn:hover{ border-color: #6ee7ff; }
+.aiflow-pause{
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(138, 180, 255, 0.35);
+  background: rgba(7, 14, 36, 0.85);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.aiflow-pause:hover{ border-color: #6ee7ff; }
+.aiflow-pause-icon{ display: block; width: 12px; height: 14px; border-left: 4px solid var(--text); border-right: 4px solid var(--text); }
+.aiflow-pause[aria-pressed="true"] .aiflow-pause-icon{
+  width: 0; height: 0;
+  border-left: 12px solid var(--text); border-right: 0;
+  border-top: 7px solid transparent; border-bottom: 7px solid transparent;
+  margin-left: 3px;
+}
+.aiflow-note{ margin: 1rem 0 0; }
+.aiflow .sr-only{ position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@media (max-width: 900px){
+  .aiflow-steps{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+  .aiflow{ padding: 1.1rem; }
+  .aiflow-steps{ grid-template-columns: minmax(0, 1fr); }
+  .aiflow-node{ font-size: 0.7rem; }
+  .aiflow-dot{ width: 46px; height: 46px; }
+  .aiflow-rail::before{ top: 23px; }
+  .aiflow-pulse{ top: 19px; }
+  .aiflow-btn{ padding: 0 0.8rem; font-size: 0.82rem; }
+}
+@media (max-width: 420px){
+  .aiflow{ padding: 0.8rem; }
+  .aiflow-node{ font-size: 0.62rem; padding-left: 0; padding-right: 0; }
+  .aiflow-bar{ gap: 0.5rem; }
+  .aiflow-nav{ gap: 0.35rem; }
+  .aiflow-btn{ padding: 0 0.6rem; font-size: 0.78rem; }
+}
+@media (max-width: 340px){
+  .aiflow-node{ font-size: 0.55rem; }
+  .aiflow-dot{ width: 40px; height: 40px; }
+  .aiflow-rail::before{ top: 20px; }
+  .aiflow-pulse{ top: 16px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .aiflow-pulse{ display: none; }
+  .aiflow *{ animation: none !important; transition: none !important; }
+}
+
+/* ===== Hero: los 4 pasos del recorrido como índice (enlaza con .aiflow) ===== */
+.ai-trace{ position: relative; list-style: none; margin: 0; padding: 0; }
+/* conector entre los 4 pasos (del centro del primer círculo al del último) */
+.ai-trace::before{
+  content: "";
+  position: absolute;
+  left: 1.05rem;
+  top: 1.4rem;
+  bottom: 1.4rem;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(110, 231, 255, 0.55), rgba(50, 177, 255, 0.2));
+}
+.ai-trace-step{
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  min-height: 44px;
+  padding: 0.45rem 0.5rem 0.45rem 0;
+  border-radius: var(--radius-md);
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.ai-trace-step:hover{ background: rgba(50, 177, 255, 0.08); }
+.ai-trace-step:focus-visible{ outline: 2px solid #6ee7ff; outline-offset: 2px; }
+.ai-trace-n{
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  border: 1px solid #6ee7ff;
+  background: #0a2150;
+  color: var(--text);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+.ai-trace-body{ display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+.ai-trace-body strong{ font-size: 0.92rem; }
+.ai-trace-body span{ font-size: 0.84rem; color: var(--muted); overflow-wrap: anywhere; }
+.ai-trace-step--accent .ai-trace-body span{ color: var(--accent); }
+.ai-trace-hint{ margin: 0.7rem 0 0; font-size: 0.74rem; color: var(--tp-silver); }
+
+/* Señal de datos: una sola pasada al cargar (≈3 s, sin bucle); queda todo encendido */
+@media (prefers-reduced-motion: no-preference){
+  .ai-trace::after{
+    content: "";
+    position: absolute;
+    left: calc(1.05rem - 4px);
+    top: 1.4rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #6ee7ff;
+    box-shadow: 0 0 12px 3px rgba(110, 231, 255, 0.8);
+    pointer-events: none;
+    opacity: 0;
+    animation: ai-trace-signal 2.6s ease-in-out 0.3s 1 both;
+  }
+  .ai-trace-n{ animation: ai-trace-lit 0.45s ease both; }
+  .ai-trace li:nth-child(1) .ai-trace-n{ animation-delay: 0.3s; }
+  .ai-trace li:nth-child(2) .ai-trace-n{ animation-delay: 1.0s; }
+  .ai-trace li:nth-child(3) .ai-trace-n{ animation-delay: 1.7s; }
+  .ai-trace li:nth-child(4) .ai-trace-n{ animation-delay: 2.4s; }
+}
+@keyframes ai-trace-signal{
+  0%{ top: 1.4rem; opacity: 0; }
+  8%{ opacity: 1; }
+  92%{ opacity: 1; }
+  100%{ top: calc(100% - 1.4rem - 10px); opacity: 0; }
+}
+@keyframes ai-trace-lit{
+  from{ border-color: rgba(138, 180, 255, 0.25); background: #070e24; color: var(--muted); box-shadow: none; }
+  to{ border-color: #6ee7ff; background: #0a2150; color: var(--text); box-shadow: 0 0 14px rgba(50, 177, 255, 0.35); }
+}
+@media (max-width: 420px){
+  .ai-trace-body span{ font-size: 0.8rem; }
+}

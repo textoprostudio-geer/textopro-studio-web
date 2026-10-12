@@ -1190,13 +1190,6 @@ body.nav-open{
   color: var(--tp-silver);
   margin: 0 0 0.9rem;
 }
-.ai-console-line{
-  font-size: 0.86rem;
-  color: var(--text);
-  margin: 0 0 0.55rem;
-}
-.ai-console-line--muted{ color: var(--muted); }
-.ai-console-line--accent{ color: var(--accent); }
 
 /* Badges de estado: Disponible / En desarrollo (.badge-soon ya existente) / Visión */
 .badge-available{
