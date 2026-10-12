@@ -3,8 +3,7 @@
 // Links de compra de guías (PayPal)
 const GUIDE_PAY_LINKS = {
   amazon: "https://www.paypal.com/ncp/payment/CDRNK3KXF96DC",
-  mercado: "https://www.paypal.com/ncp/payment/CWP8V3V2987QN",
-  mundial: "https://www.paypal.com/ncp/payment/UQR6HXDVN8T2E"
+  mercado: "https://www.paypal.com/ncp/payment/CWP8V3V2987QN"
 };
 
 function initGuidePayLinks() {
@@ -13,6 +12,9 @@ function initGuidePayLinks() {
     const url = GUIDE_PAY_LINKS[key];
     if (url && !url.startsWith("PEGA_AQUI")) {
       btn.setAttribute('href', url);
+      // El HTML trae solo un destino interno (#contacto) para quien no tiene JavaScript
+      btn.setAttribute('target', '_blank');
+      btn.setAttribute('rel', 'noopener');
     } else {
       // Si no hay link, manda a contacto para cerrar por WhatsApp/correo
       btn.setAttribute('href', '#contacto');
