@@ -1269,15 +1269,6 @@ body.nav-open{
   .steps-grid--three{ grid-template-columns: 1fr; }
 }
 
-/* ===== V1.7 — Fase 2.5: página Proyectos ===== */
-
-/* Árbol conceptual (arquitectura de APC Connect) — reutiliza .tag-list/.case-label */
-.org-tree-branch{
-  margin: 1rem 0 0 1.4rem;
-  padding-left: 1.2rem;
-  border-left: 2px solid var(--border);
-}
-
 /* ===== V1.8 — Fase 2.7: imágenes de subpáginas ===== */
 /* Leyenda "imagen conceptual" pegada a su .section-visual */
 .section-visual + .small-note{
