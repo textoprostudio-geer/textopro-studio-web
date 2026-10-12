@@ -1,0 +1,45 @@
+/* TextoPro Studio — respaldo sin JavaScript.
+   Solo se descarga cuando JavaScript está desactivado (se enlaza dentro de <noscript>).
+   Con JavaScript activo no se pide ni se aplica nada de este archivo. */
+
+/* Las secciones con animación de aparición se muestran siempre (main.js es quien las revela) */
+[data-reveal]{ opacity: 1; transform: none; transition: none; }
+
+/* Controles que necesitan JavaScript para funcionar: se ocultan en lugar de quedar inertes.
+   El contacto sigue disponible en los enlaces de WhatsApp de cada página y del pie. */
+.nav-toggle,
+.nav-backdrop,
+.fab{ display: none; }
+
+/* Menú de navegación: en pantallas pequeñas pasa de panel lateral a una fila visible bajo el logotipo */
+@media (max-width: 900px){
+  .topbar{ position: static; }
+  .topbar-inner{ flex-wrap: wrap; row-gap: 0.4rem; }
+  .nav{
+    position: static;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.3rem 1.1rem;
+    padding: 0 0 0.6rem;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    transform: none;
+    visibility: visible;
+    transition: none;
+  }
+  .nav a{ font-size: 0.9rem; }
+  .nav-cta{ margin-top: 0; }
+}
+
+/* TextoPro Lab: el generador es una herramienta de JavaScript; sin él se oculta (la página explica por qué) */
+.lab-tool{ display: none; }
+
+/* Inicio, hero: sin JavaScript se muestran las cuatro explicaciones, una bajo otra (en la versión con JS comparten celda) */
+.hero-info{ gap: 1rem; }
+.hero-info li,
+.hero-info li:first-child{ grid-area: auto; visibility: visible; opacity: 1; }
+.hero-touch-hint{ display: none; }

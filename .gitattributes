@@ -1,0 +1,10 @@
+# Normaliza los finales de línea: el repositorio ya guarda LF, así que no cambia ningún contenido.
+# Evita los avisos LF/CRLF de Windows (core.autocrlf) y que los archivos se conviertan a CRLF al hacer commit.
+* text=auto eol=lf
+
+# Archivos binarios: nunca se tocan
+*.webp binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
