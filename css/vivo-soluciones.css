@@ -364,3 +364,16 @@ button.sx-node{ cursor: pointer; }
   width: fit-content;
   margin-top: 0.55rem;
 }
+
+/* ---------- Altura común del área visual (solo desde 641 px) ----------
+   Reserva la misma altura para las cuatro soluciones, de modo que al cambiar de pestaña no se mueva lo que hay debajo.
+   354 px = alto real de los esquemas con el escenario completo (400 px de ancho) en dos columnas (≥901 px);
+   347 px = el mismo alto con el relleno de las pantallas medias (641–900 px). Productos solo recibe la altura del
+   contenedor: su ilustración y su contenido no cambian (quedan centrados). Con 640 px o menos no se reserva nada. */
+@media (min-width: 641px){
+  .sol-carousel{ --sol-vh: 347px; }
+  .sol-carousel .sol-visual{ min-height: var(--sol-vh); }
+}
+@media (min-width: 901px){
+  .sol-carousel{ --sol-vh: 354px; }
+}
