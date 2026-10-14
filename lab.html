@@ -4,29 +4,33 @@
   <meta charset="UTF-8" />
   <title>TextoPro Lab | Herramientas Digitales Gratis</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="TextoPro Lab: pequeñas herramientas digitales para resolver necesidades reales. Generador de anuncios V1, gratis y sin registro." />
+  <meta name="description" content="TextoPro Lab: tres herramientas gratuitas que funcionan en tu navegador: generador de anuncios, calculadora de precio y margen y enlaces de WhatsApp." />
   <meta name="theme-color" content="#05060a" />
   <link rel="canonical" href="https://textoprostudio.com/lab.html" />
 
-  <link rel="icon" type="image/png" href="assets/logo/favicon.png" />
-  <link rel="apple-touch-icon" href="assets/logo/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/logo/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="TextoPro Studio" />
   <meta property="og:url" content="https://textoprostudio.com/lab.html" />
   <meta property="og:title" content="TextoPro Lab | Herramientas Digitales Gratis" />
-  <meta property="og:description" content="TextoPro Lab: pequeñas herramientas digitales para resolver necesidades reales. Generador de anuncios V1, gratis y sin registro." />
-  <meta property="og:image" content="https://textoprostudio.com/assets/logo/logo-principal-oscuro.png" />
+  <meta property="og:description" content="TextoPro Lab: tres herramientas gratuitas que funcionan en tu navegador: generador de anuncios, calculadora de precio y margen y enlaces de WhatsApp." />
+  <meta property="og:image" content="https://textoprostudio.com/assets/logo/logo-textopro-og.jpg" />
   <meta name="twitter:card" content="summary" />
 
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/vivo-base.css" />
+  <link rel="stylesheet" href="css/vivo-lab.css" />
+  <noscript><link rel="stylesheet" href="css/nojs.css" /></noscript>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="topbar">
     <div class="container topbar-inner">
       <a href="index.html" class="logo-block">
-        <div class="logo-circle"><img src="assets/logo/logo-principal-oscuro.png" alt="TextoPro Studio" class="logo-img" /></div>
+        <div class="logo-circle"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" width="400" height="400" class="logo-img" /></div>
         <div class="logo-text">
           <span class="brand-main">TextoPro Studio</span>
           <span class="brand-tagline">Donde tus ideas alcanzan su mejor versión</span>
@@ -39,7 +43,7 @@
         <span class="nav-toggle-bar"></span>
       </button>
 
-      <nav class="nav" id="siteNav">
+      <nav class="nav" id="siteNav" aria-label="Navegación principal">
         <a href="index.html#soluciones">Soluciones</a>
         <a href="index.html#digitalizacion">Digitalización</a>
         <a href="index.html#ia">IA</a>
@@ -63,74 +67,336 @@
             <span aria-current="page">TextoPro Lab</span>
           </nav>
           <h1>TextoPro Lab</h1>
-          <p>Pequeñas herramientas para resolver necesidades reales.</p>
+          <p>Herramientas gratuitas para tu negocio: redacta anuncios, calcula tu margen y crea enlaces de WhatsApp. Funcionan en tu navegador, sin registro y sin inteligencia artificial.</p>
           <ul class="tag-list">
             <li>LAB V1</li>
+            <li>3 HERRAMIENTAS</li>
             <li>GRATIS · SIN REGISTRO</li>
           </ul>
           <div class="hero-actions">
-            <a class="btn-primary" href="#generador">Probar generador</a>
+            <a class="btn-primary" href="#herramientas">Explorar herramientas</a>
           </div>
         </div>
         <div class="hero-visual">
           <div class="hero-visual-glow" aria-hidden="true"></div>
-          <div class="editorial-stack" aria-hidden="true">
-            <div class="editorial-card">Producto o servicio</div>
-            <div class="editorial-card">Público</div>
-            <div class="editorial-card editorial-card--accent">3 propuestas de anuncio</div>
+          <div class="lab-bench-visual" aria-hidden="true">
+            <div class="lab-mini">
+              <span class="lab-mini-n">01</span>
+              <span class="lab-mini-name">Anuncio</span>
+              <span class="lab-mini-bars"><i></i><i></i><i></i></span>
+              <span class="lab-mini-value">3 propuestas</span>
+            </div>
+            <div class="lab-mini lab-mini--accent">
+              <span class="lab-mini-n">02</span>
+              <span class="lab-mini-name">Margen</span>
+              <span class="lab-mini-bars"><i></i><i></i><i></i></span>
+              <span class="lab-mini-value">21,67 %</span>
+            </div>
+            <div class="lab-mini">
+              <span class="lab-mini-n">03</span>
+              <span class="lab-mini-name">WhatsApp</span>
+              <span class="lab-mini-bars"><i></i><i></i><i></i></span>
+              <span class="lab-mini-value">wa.me/52…</span>
+            </div>
           </div>
           <p class="small-note">* Composición conceptual (no es un caso real).</p>
         </div>
       </div>
     </section>
 
-    <section id="generador" class="section" data-reveal>
+    <section id="herramientas" class="section lab-bench" data-reveal>
       <div class="container">
-        <span class="badge-soon">V1 · Motor de plantillas</span>
-        <h2 class="section-title">Generador de anuncios</h2>
-        <p class="section-subtitle">Completa tres datos y genera varias propuestas a partir de estructuras de copy predefinidas.</p>
-        <p class="section-note">Esta versión no utiliza IA generativa.</p>
+        <p class="case-label">Banco de herramientas</p>
+        <h2 class="section-title">Elige una herramienta</h2>
+        <p class="section-subtitle">Tres herramientas que se ejecutan en tu navegador. No usan inteligencia artificial, no piden registro y lo que escribes no se envía a ningún servidor.</p>
+        <noscript><p class="section-note">Las herramientas necesitan JavaScript para funcionar. Actívalo en tu navegador para usarlas.</p></noscript>
 
-        <div class="split-block lab-tool">
-          <form class="contact-form lab-form" id="labForm" novalidate>
-            <label>
-              ¿Qué vendes?
-              <input type="text" id="labProducto" name="producto" maxlength="80" placeholder="Ej. Servicio de mantenimiento de albercas" aria-describedby="labFormMessage" />
-            </label>
-            <label>
-              ¿A quién quieres llegar?
-              <input type="text" id="labPublico" name="publico" maxlength="80" placeholder="Ej. Hoteles y administradores de propiedades" aria-describedby="labFormMessage" />
-            </label>
-            <label>
-              ¿Qué tono quieres?
-              <select id="labTono" name="tono" aria-describedby="labFormMessage">
-                <option value="" disabled selected>Selecciona un tono</option>
-                <option value="profesional">Profesional</option>
-                <option value="cercano">Cercano</option>
-                <option value="directo">Directo</option>
-                <option value="inspirador">Inspirador</option>
-              </select>
-            </label>
+        <nav class="lab-index" id="labIndex" aria-label="Herramientas de TextoPro Lab">
+          <ul>
+            <li><a class="lab-tool-card" href="#generador" data-tool="generador"><span class="lab-tool-n" aria-hidden="true">01</span><span class="lab-tool-name">Generador de anuncios</span><span class="lab-tool-desc">Borradores de anuncio para un producto o un servicio, con tu beneficio, tu diferenciador y tu oferta.</span><span class="lab-tool-tag">Para redes, WhatsApp y fichas</span></a></li>
+            <li><a class="lab-tool-card" href="#calculadora" data-tool="calculadora"><span class="lab-tool-n" aria-hidden="true">02</span><span class="lab-tool-name">Calculadora de precio y margen</span><span class="lab-tool-desc">Ganancia, margen, precio de equilibrio y precio mínimo para el margen que quieres.</span><span class="lab-tool-tag">Para vender en marketplaces</span></a></li>
+            <li><a class="lab-tool-card" href="#whatsapp" data-tool="whatsapp"><span class="lab-tool-n" aria-hidden="true">03</span><span class="lab-tool-name">Enlaces de WhatsApp</span><span class="lab-tool-desc">Un enlace directo a tu número, con un mensaje listo para que te escriban.</span><span class="lab-tool-tag">Para tus clientes</span></a></li>
+          </ul>
+        </nav>
 
-            <p class="lab-form-message" id="labFormMessage" role="alert"></p>
+        <div class="lab-panels">
 
-            <div class="contact-actions">
-              <button type="submit" class="btn-primary" id="labGenerateBtn">Generar anuncios</button>
-              <button type="button" class="btn-secondary" id="labClearBtn">Limpiar</button>
-            </div>
-          </form>
+          <!-- 01 · Generador de anuncios -->
+          <article class="lab-panel" id="generador">
+            <header class="lab-panel-head">
+              <span class="badge-available">Disponible</span>
+              <h3>Generador de anuncios</h3>
+              <p>Completa los datos y recibe tres borradores que puedes editar. Usa estructuras de redacción predefinidas y solo tus propias palabras: no inventa descuentos, garantías ni características, y no usa inteligencia artificial.</p>
+            </header>
+            <div class="lab-grid">
+              <form class="lab-form" id="labForm" novalidate>
+                <fieldset class="lab-seg-group">
+                  <legend>¿Qué ofreces?</legend>
+                  <div class="lab-seg">
+                    <label><input type="radio" name="tipo" value="producto" checked /><span>Producto</span></label>
+                    <label><input type="radio" name="tipo" value="servicio" /><span>Servicio</span></label>
+                  </div>
+                </fieldset>
 
-          <div>
-            <div class="lab-results" id="labResults" aria-live="polite">
-              <div class="lab-results-empty" id="labResultsEmpty">
-                <p>Tu próxima propuesta aparecerá aquí.</p>
-                <p class="section-note">Completa los datos de arriba para comenzar.</p>
+                <div class="lab-field">
+                  <label for="labProducto" id="labItemLabel">¿Qué producto vendes?</label>
+                  <input type="text" id="labProducto" name="item" maxlength="100" autocomplete="off" placeholder="Ej. Audífonos inalámbricos con cancelación de ruido" aria-describedby="labItemHint" />
+                  <p class="lab-hint" id="labItemHint">Escribe el nombre del producto, como lo diría un cliente.</p>
+                  <p class="lab-error" id="labErr-item" hidden></p>
+                </div>
+                <div class="lab-field">
+                  <label for="labPublico">¿A quién quieres llegar?</label>
+                  <input type="text" id="labPublico" name="publico" maxlength="100" autocomplete="off" placeholder="Ej. Personas que viajan seguido" aria-describedby="labPublicoHint" />
+                  <p class="lab-hint" id="labPublicoHint">Describe a tu cliente ideal en pocas palabras.</p>
+                  <p class="lab-error" id="labErr-publico" hidden></p>
+                </div>
+
+                <p class="lab-group-title">Para un resultado más específico <span>(opcional)</span></p>
+                <div class="lab-field">
+                  <label for="labBeneficio">Beneficio principal</label>
+                  <input type="text" id="labBeneficio" name="beneficio" maxlength="120" autocomplete="off" placeholder="Ej. Sonido claro sin cables" aria-describedby="labBeneficioHint" />
+                  <p class="lab-hint" id="labBeneficioHint">Qué gana quien lo usa, en una frase corta.</p>
+                  <p class="lab-error" id="labErr-beneficio" hidden></p>
+                </div>
+                <div class="lab-field">
+                  <label for="labDiferenciador">Diferenciador</label>
+                  <input type="text" id="labDiferenciador" name="diferenciador" maxlength="120" autocomplete="off" placeholder="Ej. Batería para 30 horas" aria-describedby="labDiferenciadorHint" />
+                  <p class="lab-hint" id="labDiferenciadorHint">Algo cierto que te distingue. Escribe solo lo que puedas cumplir.</p>
+                  <p class="lab-error" id="labErr-diferenciador" hidden></p>
+                </div>
+                <div class="lab-field">
+                  <label for="labOferta">Oferta o promoción</label>
+                  <input type="text" id="labOferta" name="oferta" maxlength="120" autocomplete="off" placeholder="Ej. Envío gratis esta semana" aria-describedby="labOfertaHint" />
+                  <p class="lab-hint" id="labOfertaHint">Solo si existe. La herramienta no inventa ofertas.</p>
+                  <p class="lab-error" id="labErr-oferta" hidden></p>
+                </div>
+
+                <div class="lab-row">
+                  <div class="lab-field">
+                    <label for="labCanal">¿Dónde lo publicarás?</label>
+                    <select id="labCanal" name="canal">
+                      <option value="redes" selected>Publicación en redes sociales</option>
+                      <option value="whatsapp">Mensaje de WhatsApp</option>
+                      <option value="anuncio">Anuncio pagado corto</option>
+                      <option value="ficha">Descripción o ficha</option>
+                    </select>
+                  </div>
+                  <div class="lab-field">
+                    <label for="labObjetivo">¿Qué quieres lograr?</label>
+                    <select id="labObjetivo" name="objetivo">
+                      <option value="vender" selected>Vender o recibir pedidos</option>
+                      <option value="cotizar">Agendar o cotizar</option>
+                      <option value="contacto">Recibir mensajes</option>
+                      <option value="conocer">Dar a conocer</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="lab-field">
+                  <label for="labTono">Tono</label>
+                  <select id="labTono" name="tono">
+                    <option value="cercano" selected>Cercano</option>
+                    <option value="profesional">Profesional</option>
+                    <option value="directo">Directo</option>
+                    <option value="inspirador">Inspirador</option>
+                  </select>
+                </div>
+
+                <p class="lab-form-message" id="labFormMessage" role="alert"></p>
+                <div class="lab-actions">
+                  <button type="submit" class="btn-primary" id="labGenerateBtn">Generar anuncios</button>
+                  <button type="button" class="btn-secondary" id="labClearBtn">Limpiar</button>
+                </div>
+              </form>
+
+              <div class="lab-output">
+                <div class="lab-results" id="labResults">
+                  <div class="lab-results-empty" id="labResultsEmpty">
+                    <p>Tus propuestas aparecerán aquí.</p>
+                    <p class="section-note">Completa lo que vendes y a quién quieres llegar. Cuantos más datos reales agregues, más específico será el borrador.</p>
+                  </div>
+                </div>
+                <div class="lab-actions" id="labRegenerateWrap" hidden>
+                  <button type="button" class="btn-secondary" id="labRegenerateBtn">Generar nuevas propuestas</button>
+                </div>
               </div>
             </div>
-            <div class="section-cta" id="labRegenerateWrap" hidden>
-              <button type="button" class="btn-secondary" id="labRegenerateBtn">Generar nuevas propuestas</button>
+            <p class="lab-related">Relacionado: <a href="servicios.html#marketing-contenido">comunicación, contenido y marketing con TextoPro <span aria-hidden="true">→</span></a></p>
+          </article>
+
+          <!-- 02 · Calculadora de precio y margen -->
+          <article class="lab-panel" id="calculadora">
+            <header class="lab-panel-head">
+              <span class="badge-available">Disponible</span>
+              <h3>Calculadora de precio y margen</h3>
+              <p>Calcula cuánto ganas por unidad, qué margen te queda y a qué precio debes vender para alcanzar el margen que buscas. Tú escribes tus costos y las tarifas que te cobra tu plataforma; la herramienta no consulta tablas oficiales ni usa internet.</p>
+            </header>
+            <div class="lab-grid">
+              <form class="lab-form" id="calcForm" novalidate>
+                <div class="lab-field">
+                  <label for="calc-moneda">Moneda</label>
+                  <select id="calc-moneda">
+                    <option value="MXN" selected>MXN · peso mexicano</option>
+                    <option value="USD">USD · dólar estadounidense</option>
+                    <option value="EUR">EUR · euro</option>
+                    <option value="COP">COP · peso colombiano</option>
+                    <option value="ARS">ARS · peso argentino</option>
+                    <option value="CLP">CLP · peso chileno</option>
+                    <option value="PEN">PEN · sol peruano</option>
+                    <option value="BRL">BRL · real brasileño</option>
+                  </select>
+                </div>
+                <p class="lab-group-title">Costos por unidad</p>
+                <div class="lab-row">
+                  <div class="lab-field">
+                    <label for="calc-costo">Costo del producto</label>
+                    <input type="text" id="calc-costo" inputmode="decimal" autocomplete="off" placeholder="Ej. 200" aria-describedby="calcHint-costo" />
+                    <p class="lab-hint" id="calcHint-costo">Lo que te cuesta cada unidad. Obligatorio.</p>
+                    <p class="lab-error" id="calcErr-costo" hidden></p>
+                  </div>
+                  <div class="lab-field">
+                    <label for="calc-envio">Envío y otros costos</label>
+                    <input type="text" id="calc-envio" inputmode="decimal" autocomplete="off" placeholder="Ej. 40" aria-describedby="calcHint-envio" />
+                    <p class="lab-hint" id="calcHint-envio">Por unidad: empaque, envío, almacenaje. Vacío = 0.</p>
+                    <p class="lab-error" id="calcErr-envio" hidden></p>
+                  </div>
+                </div>
+                <p class="lab-group-title">Porcentajes sobre el precio de venta</p>
+                <div class="lab-row lab-row--3">
+                  <div class="lab-field">
+                    <label for="calc-comision">Comisión (%)</label>
+                    <input type="text" id="calc-comision" inputmode="decimal" autocomplete="off" placeholder="Ej. 15" aria-describedby="calcHint-comision" />
+                    <p class="lab-hint" id="calcHint-comision">La que te cobra tu plataforma.</p>
+                    <p class="lab-error" id="calcErr-comision" hidden></p>
+                  </div>
+                  <div class="lab-field">
+                    <label for="calc-publicidad">Publicidad (%)</label>
+                    <input type="text" id="calc-publicidad" inputmode="decimal" autocomplete="off" placeholder="Ej. 8" aria-describedby="calcHint-publicidad" />
+                    <p class="lab-hint" id="calcHint-publicidad">Cuánto inviertes por venta.</p>
+                    <p class="lab-error" id="calcErr-publicidad" hidden></p>
+                  </div>
+                  <div class="lab-field">
+                    <label for="calc-otros">Otros gastos (%)</label>
+                    <input type="text" id="calc-otros" inputmode="decimal" autocomplete="off" placeholder="Ej. 2" aria-describedby="calcHint-otros" />
+                    <p class="lab-hint" id="calcHint-otros">Impuestos, devoluciones, etc.</p>
+                    <p class="lab-error" id="calcErr-otros" hidden></p>
+                  </div>
+                </div>
+                <p class="lab-group-title">Tu precio y tu meta</p>
+                <div class="lab-row">
+                  <div class="lab-field">
+                    <label for="calc-precio">Precio de venta propuesto</label>
+                    <input type="text" id="calc-precio" inputmode="decimal" autocomplete="off" placeholder="Ej. 450" aria-describedby="calcHint-precio" />
+                    <p class="lab-hint" id="calcHint-precio">Lo que pagará el cliente. Obligatorio.</p>
+                    <p class="lab-error" id="calcErr-precio" hidden></p>
+                  </div>
+                  <div class="lab-field">
+                    <label for="calc-margenObjetivo">Margen objetivo (%)</label>
+                    <input type="text" id="calc-margenObjetivo" inputmode="decimal" autocomplete="off" placeholder="Ej. 25" aria-describedby="calcHint-margenObjetivo" />
+                    <p class="lab-hint" id="calcHint-margenObjetivo">El margen que quieres alcanzar. Vacío = 0.</p>
+                    <p class="lab-error" id="calcErr-margenObjetivo" hidden></p>
+                  </div>
+                </div>
+                <div class="lab-actions">
+                  <button type="submit" class="btn-primary">Calcular</button>
+                  <button type="button" class="btn-secondary" id="calcEjemplo">Cargar ejemplo</button>
+                  <button type="button" class="btn-secondary" id="calcLimpiar">Limpiar</button>
+                </div>
+                <p class="lab-hint">Usa punto o coma para los decimales (149.90 o 149,90). Los campos opcionales vacíos se toman como 0.</p>
+              </form>
+
+              <div class="lab-output" id="calcResultados">
+                <div class="lab-results-empty" id="calcEmpty">
+                  <p>Tu resultado aparecerá aquí.</p>
+                  <p class="section-note">Escribe al menos el costo y el precio de venta, o pulsa «Cargar ejemplo» para ver cómo funciona.</p>
+                </div>
+                <div id="calcOut" hidden>
+                  <p class="lab-summary" id="calcSummary"></p>
+                  <div class="lab-kpis">
+                    <div class="lab-kpi lab-kpi--main" id="calcGananciaTile"><span class="lab-kpi-label" id="calcGananciaLabel">Ganancia estimada por unidad</span><strong class="lab-kpi-value" id="calcGanancia"></strong></div>
+                    <div class="lab-kpi lab-kpi--main"><span class="lab-kpi-label">Margen sobre el precio de venta</span><strong class="lab-kpi-value" id="calcMargen"></strong><span class="lab-kpi-note">Ganancia ÷ precio de venta</span></div>
+                    <div class="lab-kpi"><span class="lab-kpi-label">Markup sobre el costo total</span><strong class="lab-kpi-value" id="calcMarkup"></strong><span class="lab-kpi-note">Ganancia ÷ costo total. No es lo mismo que el margen.</span></div>
+                    <div class="lab-kpi"><span class="lab-kpi-label">Precio de equilibrio</span><strong class="lab-kpi-value" id="calcEquilibrio"></strong><span class="lab-kpi-note">Por debajo de este precio pierdes dinero.</span></div>
+                    <div class="lab-kpi"><span class="lab-kpi-label" id="calcObjLabel">Precio mínimo para tu margen objetivo</span><strong class="lab-kpi-value" id="calcMinimo"></strong><span class="lab-kpi-note" id="calcMinimoNota"></span></div>
+                  </div>
+                  <dl class="lab-breakdown">
+                    <div><dt>Costos fijos por unidad</dt><dd id="calcFijos"></dd></div>
+                    <div class="lab-breakdown-sub"><dt>Detalle</dt><dd id="calcFijosDetalle"></dd></div>
+                    <div><dt>Comisión</dt><dd id="calcCom"></dd></div>
+                    <div><dt>Publicidad</dt><dd id="calcPub"></dd></div>
+                    <div><dt>Otros gastos</dt><dd id="calcOtros"></dd></div>
+                    <div class="lab-breakdown-total"><dt>Costos porcentuales estimados</dt><dd id="calcPctTotal"></dd></div>
+                  </dl>
+                </div>
+                <details class="lab-details">
+                  <summary>Cómo se calcula</summary>
+                  <ul>
+                    <li><strong>Costos fijos por unidad</strong> = costo del producto + envío y otros costos.</li>
+                    <li><strong>Costos porcentuales</strong> = precio de venta × cada porcentaje ÷ 100 (comisión, publicidad y otros gastos), redondeados al centavo.</li>
+                    <li><strong>Ganancia por unidad</strong> = precio de venta − costos fijos − costos porcentuales.</li>
+                    <li><strong>Margen</strong> = ganancia ÷ <em>precio de venta</em>. <strong>Markup</strong> = ganancia ÷ <em>costo total</em>. Con costo 100 y precio 200, el margen es 50 % y el markup es 100 %.</li>
+                    <li><strong>Precio de equilibrio</strong> = costos fijos ÷ (1 − suma de porcentajes ÷ 100).</li>
+                    <li><strong>Precio mínimo para un margen objetivo</strong> = costos fijos ÷ (1 − suma de porcentajes ÷ 100 − margen objetivo ÷ 100). Se muestra el primer centavo con el que el margen ya cumple la meta.</li>
+                  </ul>
+                  <p><strong>Ejemplo para comprobarlo</strong> (pulsa «Cargar ejemplo»): costo 200 y envío 40 → costos fijos 240.00. Comisión 15 %, publicidad 8 % y otros 2 % de un precio de 450 → 67.50 + 36.00 + 9.00 = 112.50. Ganancia: 450 − 240 − 112.50 = 97.50, margen 21.67 %. Equilibrio: 240 ÷ 0.75 = 320.00. Precio mínimo para 25 %: 240 ÷ 0.50 = 480.00.</p>
+                  <p class="lab-fineprint">Es una estimación con los datos que escribes. No son tarifas oficiales de Amazon, Mercado Libre ni de ninguna plataforma, y no equivale a una utilidad contable o fiscal. Si quieres incluir impuestos, devoluciones u otros costos, súmalos en «Otros gastos».</p>
+                </details>
+              </div>
             </div>
-          </div>
+            <p class="lab-related">Relacionado: <a href="index.html#guias">guía «Cómo vender en Amazon desde cero» <span aria-hidden="true">→</span></a></p>
+          </article>
+
+          <!-- 03 · Enlaces de WhatsApp -->
+          <article class="lab-panel" id="whatsapp">
+            <header class="lab-panel-head">
+              <span class="badge-available">Disponible</span>
+              <h3>Generador de enlaces de WhatsApp</h3>
+              <p>Crea un enlace que abre una conversación contigo en WhatsApp, con un mensaje opcional ya escrito. No envía mensajes, no contacta a nadie y no guarda ni transmite lo que escribes.</p>
+            </header>
+            <div class="lab-grid">
+              <form class="lab-form" id="waForm" novalidate>
+                <div class="lab-field">
+                  <label for="waTel">Número de WhatsApp con código de país</label>
+                  <input type="tel" id="waTel" inputmode="tel" autocomplete="off" placeholder="Ej. 52 998 123 4567" aria-describedby="waHint-tel" />
+                  <p class="lab-hint" id="waHint-tel">Empieza con el código de país (52 para México). Puedes usar espacios, guiones o un + al inicio.</p>
+                  <p class="lab-error" id="waErr-tel" hidden></p>
+                </div>
+                <div class="lab-field">
+                  <label for="waMsg">Mensaje inicial <span class="lab-opt">(opcional)</span></label>
+                  <textarea id="waMsg" rows="4" maxlength="1000" placeholder="Ej. Hola, quiero información sobre sus servicios." aria-describedby="waCount"></textarea>
+                  <p class="lab-hint" id="waCount">0 caracteres</p>
+                </div>
+                <div class="lab-actions">
+                  <button type="submit" class="btn-primary">Generar enlace</button>
+                  <button type="button" class="btn-secondary" id="waEjemplo">Cargar ejemplo</button>
+                  <button type="button" class="btn-secondary" id="waLimpiar">Limpiar</button>
+                </div>
+              </form>
+              <div class="lab-output">
+                <div class="lab-results-empty" id="waEmpty">
+                  <p>Tu enlace aparecerá aquí.</p>
+                  <p class="section-note">Escribe tu número con código de país. El mensaje es opcional.</p>
+                </div>
+                <div id="waOut" hidden>
+                  <div class="lab-field">
+                    <label for="waLink">Tu enlace</label>
+                    <input type="text" id="waLink" class="lab-link-box" readonly />
+                  </div>
+                  <p class="lab-error" id="waWarn" hidden></p>
+                  <div class="lab-actions">
+                    <button type="button" class="btn-primary btn-small" id="waCopy">Copiar enlace</button>
+                    <a class="btn-secondary btn-small" id="waOpen" href="#" target="_blank" rel="noopener noreferrer">Abrir para comprobarlo <span class="sr-only">(se abre en una pestaña nueva)</span></a>
+                    <span class="lab-copy-status" id="waCopyStatus" role="status" aria-live="polite"></span>
+                  </div>
+                  <div id="waPreviewWrap" hidden>
+                    <p class="lab-group-title">Así se verá el mensaje al abrir el chat</p>
+                    <blockquote class="lab-preview" id="waPreview"></blockquote>
+                  </div>
+                  <p class="lab-fineprint">«Abrir para comprobarlo» abre WhatsApp solo cuando tú lo pulsas; el mensaje no se envía hasta que lo envíes tú.</p>
+                </div>
+              </div>
+            </div>
+            <p class="lab-related">Relacionado: <a href="digitalizacion.html">ordena la atención de tu negocio con digitalización <span aria-hidden="true">→</span></a></p>
+          </article>
         </div>
       </div>
     </section>
@@ -141,18 +407,18 @@
         <div class="steps-grid steps-grid--three">
           <div class="step">
             <span class="step-number">01</span>
-            <h3>Cuéntanos</h3>
-            <p>Producto o servicio, público y tono.</p>
+            <h3>Elige</h3>
+            <p>Escoge la herramienta que necesitas.</p>
           </div>
           <div class="step">
             <span class="step-number">02</span>
-            <h3>Genera</h3>
-            <p>El motor combina los datos con estructuras de copy.</p>
+            <h3>Completa</h3>
+            <p>Escribe tus datos reales. Todo se calcula o se redacta en tu navegador.</p>
           </div>
           <div class="step">
             <span class="step-number">03</span>
-            <h3>Ajusta</h3>
-            <p>Elige una propuesta y adáptala a tu negocio.</p>
+            <h3>Revisa y ajusta</h3>
+            <p>Edita el resultado, comprueba las cifras y úsalo en tu negocio.</p>
           </div>
         </div>
       </div>
@@ -163,17 +429,17 @@
         <h2 class="section-title">Esto es solo el comienzo.</h2>
         <div class="cards-grid">
           <article class="card">
-            <span class="badge-available">Disponible</span>
+            <span class="badge-available" aria-hidden="true">Disponible</span>
             <h3>Disponible</h3>
-            <p>Generadores y herramientas digitales simples, sin registro.</p>
+            <p>Generador de anuncios, calculadora de precio y margen y generador de enlaces de WhatsApp, gratis y sin registro.</p>
           </article>
           <article class="card">
-            <span class="badge-soon">En desarrollo</span>
+            <span class="badge-soon" aria-hidden="true">En desarrollo</span>
             <h3>En desarrollo</h3>
             <p>Herramientas potenciadas por inteligencia artificial.</p>
           </article>
           <article class="card">
-            <span class="badge-vision">Visión</span>
+            <span class="badge-vision" aria-hidden="true">Visión</span>
             <h3>Visión</h3>
             <p>Un ecosistema de herramientas y agentes especializados para diferentes necesidades.</p>
           </article>
@@ -183,15 +449,15 @@
 
     <section id="conexion-ia" class="section section-alt" data-reveal>
       <div class="container">
-        <h2 class="section-title center">¿Y si el generador pudiera entender el contexto?</h2>
-        <p class="section-subtitle center">La siguiente evolución de Lab será incorporar inteligencia artificial para trabajar con mayor contexto y flexibilidad. Todavía no está implementada.</p>
+        <h2 class="section-title center">¿Y si las herramientas pudieran entender el contexto?</h2>
+        <p class="section-subtitle center">La siguiente evolución prevista de Lab es incorporar inteligencia artificial para trabajar con mayor contexto y flexibilidad. Todavía no está implementada.</p>
         <div class="section-cta center">
           <a class="btn-secondary" href="ia.html">Conoce TextoPro AI <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
 
-    <section id="cta-final" class="section section-alt" data-reveal>
+    <section id="cta-final" class="section" data-reveal>
       <div class="container">
         <h2 class="section-title center">¿Qué herramienta te gustaría encontrar en TextoPro Lab?</h2>
         <p class="section-subtitle center">Estamos construyendo nuevas herramientas alrededor de necesidades reales. Si tienes una idea, cuéntanos.</p>
@@ -206,7 +472,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <div class="logo-circle footer-logo"><img src="assets/logo/logo-principal-oscuro.png" alt="TextoPro Studio" class="logo-img" /></div>
+        <div class="logo-circle footer-logo"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" width="400" height="400" class="logo-img" /></div>
         <span class="brand-main">TextoPro Studio</span>
       </div>
       <nav class="footer-nav" aria-label="Navegación del pie de página">
@@ -245,6 +511,10 @@
   </div>
 
 <script src="js/main.js" defer></script>
+<script src="js/vivo-base.js" defer></script>
+<script src="js/lab-core.js" defer></script>
 <script src="js/lab.js" defer></script>
+<script src="js/lab-calculadora.js" defer></script>
+<script src="js/lab-whatsapp.js" defer></script>
 </body>
 </html>

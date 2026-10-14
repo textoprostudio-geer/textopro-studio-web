@@ -23,3 +23,7 @@ node_modules/
 .env
 .env.*
 *.log
+
+# Fuente maestra del logotipo oficial (2400x1792, 1.8 MB): no se publica; el sitio usa las versiones optimizadas
+assets/logo/logo oficial.jpg
+assets/logo/logo-oficial-textopro.jpg

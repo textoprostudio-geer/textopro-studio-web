@@ -1,0 +1,61 @@
+/* ===== TextoPro Studio — Tecnología Viva · piezas compartidas =====
+   Lo usan varias páginas: utilidad de accesibilidad, botón de pausa e insignia "demostración conceptual".
+   Cada experiencia carga además su propio módulo (vivo-inicio, vivo-digitalizacion). */
+
+/* Texto solo para lectores de pantalla */
+.sr-only{
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Botón de pausa de animaciones (control real; el JS lo muestra solo si hay movimiento que pausar) */
+.vivo-pause{
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(138, 180, 255, 0.38);
+  background: rgba(7, 14, 36, 0.82);
+  cursor: pointer;
+}
+.vivo-pause[hidden]{ display: none; }
+.vivo-pause:hover{ border-color: #6ee7ff; }
+.vivo-pause-icon{
+  display: block;
+  width: 12px;
+  height: 14px;
+  border-left: 4px solid var(--text);
+  border-right: 4px solid var(--text);
+}
+.vivo-pause[aria-pressed="true"] .vivo-pause-icon{
+  width: 0;
+  height: 0;
+  border-left: 12px solid var(--text);
+  border-right: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  margin-left: 3px;
+}
+
+/* Insignia "Demostración conceptual" */
+.vivo-badge{
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.18rem 0.7rem;
+  border: 1px solid rgba(110, 231, 255, 0.4);
+  border-radius: 999px;
+  color: #6ee7ff;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

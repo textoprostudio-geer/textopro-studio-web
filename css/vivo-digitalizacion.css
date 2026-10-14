@@ -1,0 +1,252 @@
+/* ===== TextoPro Studio — Tecnología Viva · Digitalización =====
+   Usa además vivo-base.css (insignia conceptual). */
+
+/* ===== Digitalización: demostración conceptual Antes / Después ===== */
+/* Sin JavaScript solo se ven las columnas de texto y la imagen conceptual (como antes). */
+.ba:not(.is-live) .ba-head,
+.ba:not(.is-live) .ba-stage,
+.ba:not(.is-live) .ba-note{ display: none; }
+
+.ba-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.8rem;
+}
+.ba-status{ margin: 0; font-size: 0.9rem; font-weight: 600; color: var(--text); }
+
+.ba-stage{
+  position: relative;
+  aspect-ratio: 16 / 8.6;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(138, 180, 255, 0.25);
+  background:
+    radial-gradient(circle at 80% 10%, rgba(50, 177, 255, calc(0.05 + 0.15 * var(--p))), transparent 55%),
+    linear-gradient(180deg, #08122b 0%, #050a1c 100%);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+/* Marco del panel: aparece con la transformación */
+.ba-frame{
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  height: 17%;
+  padding: 0 4%;
+  border-bottom: 1px solid rgba(110, 231, 255, 0.25);
+  background: rgba(9, 24, 58, 0.7);
+  opacity: var(--p);
+  transform: translateY(calc((1 - var(--p)) * -10px));
+}
+.ba-dots{ display: inline-flex; gap: 5px; }
+.ba-dots i{ width: 8px; height: 8px; border-radius: 50%; background: #febc2e; }
+.ba-dots i:first-child{ background: #ff5f57; }
+.ba-dots i:last-child{ background: #28c840; }
+.ba-frame-title{ font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: #6ee7ff; }
+
+.ba-lines{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.ba-lines path{ fill: none; vector-effect: non-scaling-stroke; stroke-linecap: round; }
+.ba-tangle path{ stroke: rgba(170, 195, 255, 0.4); stroke-width: 1.3; stroke-dasharray: 4 5; }
+.ba-tangle{ opacity: calc(1 - 2 * var(--p)); }
+.ba-order path{ stroke: rgba(110, 231, 255, 0.55); stroke-width: 1.4; }
+.ba-order{ opacity: calc(2 * var(--p) - 1); }
+
+.ba-item{
+  position: absolute;
+  z-index: 3;
+  left: calc((var(--x0) * (1 - var(--p)) + var(--x1) * var(--p)) * 1%);
+  top: calc((var(--y0) * (1 - var(--p)) + var(--y1) * var(--p)) * 1%);
+  width: 27%;
+  min-height: 15%;
+  display: grid;
+  place-items: center;
+  padding: 0.5rem 0.6rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.74rem;
+  line-height: 1.2;
+  transform: translate(-50%, -50%) rotate(calc(var(--r0) * (1 - var(--p)) * 1deg));
+}
+.ba-item::before,
+.ba-item::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+}
+/* "Antes": ficha suelta, apagada */
+.ba-item::before{
+  background: rgba(170, 185, 215, 0.14);
+  border: 1px dashed rgba(190, 205, 235, 0.45);
+  opacity: calc(1 - var(--p));
+}
+/* "Después": ficha del panel, cian */
+.ba-item::after{
+  background: linear-gradient(180deg, rgba(9, 28, 66, 0.96), rgba(7, 16, 40, 0.96));
+  border: 1px solid rgba(110, 231, 255, 0.6);
+  box-shadow: 0 0 16px rgba(50, 177, 255, calc(0.35 * var(--p)));
+  opacity: var(--p);
+}
+.ba-item span{ grid-area: 1 / 1; }
+.ba-t0{ color: rgba(205, 215, 240, 0.95); opacity: calc(1 - 3 * var(--p)); }
+.ba-t1{ color: var(--text); font-weight: 600; opacity: calc(3 * var(--p) - 1); }
+
+.ba-chips{
+  position: absolute;
+  z-index: 3;
+  left: 0; right: 0; bottom: 3.5%;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  opacity: calc(2 * var(--p) - 1);
+  transform: translateY(calc((1 - var(--p)) * 10px));
+}
+.ba-chips span{
+  padding: 0.22rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(110, 231, 255, 0.55);
+  background: rgba(9, 24, 58, 0.95);
+  color: #6ee7ff;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* Controles: Antes · deslizador · Después */
+.ba-controls{
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0 1.6rem;
+}
+.ba-controls[hidden]{ display: none; }
+.ba-btn{
+  min-height: 44px;
+  padding: 0 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(138, 180, 255, 0.35);
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.ba-btn:hover{ color: var(--text); border-color: rgba(110, 231, 255, 0.65); }
+.ba-btn[aria-pressed="true"]{
+  color: var(--text);
+  border-color: #6ee7ff;
+  background: rgba(9, 24, 58, 0.95);
+  box-shadow: 0 0 18px rgba(50, 177, 255, 0.28);
+}
+.ba-range{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 44px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.ba-range::-webkit-slider-runnable-track{
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #6ee7ff var(--fill, 0%), rgba(138, 180, 255, 0.25) var(--fill, 0%));
+}
+.ba-range::-moz-range-track{
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(138, 180, 255, 0.25);
+}
+.ba-range::-moz-range-progress{ height: 6px; border-radius: 3px; background: #6ee7ff; }
+.ba-range::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 28px;
+  height: 28px;
+  margin-top: -11px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #32b1ff;
+  box-shadow: 0 0 14px rgba(50, 177, 255, 0.75);
+}
+.ba-range::-moz-range-thumb{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #32b1ff;
+  box-shadow: 0 0 14px rgba(50, 177, 255, 0.75);
+}
+
+/* Las columnas de texto siguen el estado de la demostración */
+.ba.is-live .ba-col{ transition: opacity 0.3s ease; }
+.ba.is-live[data-state="before"] .ba-col--after,
+.ba.is-live[data-state="after"] .ba-col--before{ opacity: 0.72; }
+.ba-note{ margin-top: 1.2rem; }
+
+@media (max-width: 640px){
+  .ba-stage{ aspect-ratio: 4 / 4.3; }
+  .ba-item{ width: 29%; padding: 0.35rem 0.3rem; font-size: 0.62rem; min-height: 14%; }
+  .ba-chips{ gap: 0.35rem; }
+  .ba-chips span{ padding: 0.2rem 0.5rem; font-size: 0.62rem; }
+  .ba-frame-title{ font-size: 0.62rem; }
+  .ba-controls{ grid-template-columns: 1fr 1fr; }
+  .ba-range{ grid-column: 1 / -1; grid-row: 1; }
+  .ba-btn{ width: 100%; }
+}
+@media (prefers-reduced-motion: reduce){
+  .ba.is-live .ba-col{ transition: none; }
+}
+
+/* ===== Hero: las tres barras comparten nombre y señal con la demostración Antes/Después ===== */
+/* Las etiquetas son las mismas que las fichas finales de la demo (Consulta, Seguimiento, Operación). */
+.hero-stream{ margin-bottom: 0.7rem; }
+.hero-stream-label{
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tp-silver);
+}
+.hero-stream .mock-bar{ position: relative; overflow: hidden; margin-bottom: 0; }
+.hero-stream-link{ display: flex; min-height: 44px; margin-top: 0.4rem; }
+.hero-stream-link:focus-visible{ outline: 2px solid #6ee7ff; outline-offset: 3px; border-radius: 6px; }
+
+/* Señal de datos: una sola pasada por barra al cargar (≈2,5 s, sin bucle) */
+@media (prefers-reduced-motion: no-preference){
+  .hero-stream .mock-bar::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 24%;
+    background: linear-gradient(90deg, transparent, rgba(190, 245, 255, 0.95), transparent);
+    animation: hero-stream-signal 1.5s ease-in-out 1 both;
+  }
+  .hero-stream:nth-child(2) .mock-bar::after{ animation-delay: 0.3s; }
+  .hero-stream:nth-child(3) .mock-bar::after{ animation-delay: 0.8s; }
+  .hero-stream:nth-child(4) .mock-bar::after{ animation-delay: 1.3s; }
+}
+@keyframes hero-stream-signal{
+  from{ transform: translateX(-100%); opacity: 0; }
+  15%{ opacity: 1; }
+  85%{ opacity: 1; }
+  to{ transform: translateX(420%); opacity: 0; }
+}

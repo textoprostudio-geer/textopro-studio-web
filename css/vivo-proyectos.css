@@ -1,0 +1,119 @@
+/* ===== TextoPro Studio — Tecnología Viva · Proyectos (APC Connect) =====
+   Usa además vivo-base.css (insignia conceptual). Sin JavaScript se ve como un árbol estático;
+   con JavaScript cada elemento es un botón que resalta su ruta y muestra una descripción. */
+
+.apc{
+  max-width: 64rem;
+  margin: 1.6rem auto 0;
+  padding: 1.4rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(138, 180, 255, 0.25);
+  background: linear-gradient(180deg, #08122b 0%, #060b1c 100%);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  --apc-line: rgba(138, 180, 255, 0.32);
+  --apc-lit: #6ee7ff;
+}
+.apc-labels{ display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.5rem; margin: 0 0 1.3rem; }
+:where(.apc ul){ list-style: none; margin: 0; padding: 0; }
+.apc-item{ position: relative; }
+.apc-note{ max-width: 64rem; margin: 0.9rem auto 0; text-align: center; }
+
+.apc-node{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 0.45rem 0.95rem;
+  border: 1px solid rgba(138, 180, 255, 0.3);
+  border-radius: 999px;
+  background: #0b1226;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.86rem;
+  line-height: 1.25;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.apc-node--root{ font-size: 0.95rem; font-weight: 700; border-color: rgba(110, 231, 255, 0.5); background: #0a2150; }
+button.apc-node{ cursor: pointer; transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease; }
+button.apc-node:hover{ border-color: var(--apc-lit); }
+button.apc-node:focus-visible{ outline: 2px solid var(--apc-lit); outline-offset: 3px; }
+.apc-item.is-sub > .apc-node{ border-color: rgba(110, 231, 255, 0.55); }
+.apc-item.is-path > .apc-node{ border-color: var(--apc-lit); background: #0a2150; }
+.apc-node[aria-pressed="true"]{
+  background: #0e2d6b;
+  box-shadow: 0 0 0 3px rgba(110, 231, 255, 0.2), 0 0 18px rgba(50, 177, 255, 0.45);
+}
+
+/* Panel de descripción (lo crea el JS) */
+.apc-detail{
+  margin-top: 1.4rem;
+  padding: 1rem 1.2rem;
+  min-height: 8.2rem; /* altura reservada: el panel no cambia de tamaño al elegir elementos */
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: rgba(13, 15, 24, 0.7);
+}
+.apc-detail p{ margin: 0; }
+.apc-detail-title{ margin-bottom: 0.3rem !important; font-weight: 700; color: var(--text); }
+.apc-detail-title:empty{ display: none; }
+.apc-detail-text{ color: var(--muted); font-size: 0.9rem; }
+.apc-detail-rel{ margin-top: 0.5rem !important; color: var(--accent); font-size: 0.84rem; }
+
+/* ===== Escritorio: árbol horizontal con conectores ===== */
+@media (min-width: 900px){
+  .apc-root > .apc-item{ text-align: center; }
+  .apc-l1{ position: relative; display: flex; justify-content: center; padding-top: 1.2rem; }
+  .apc-l1::before{ content: ""; position: absolute; top: 0; left: 50%; height: 1.2rem; border-left: 2px solid var(--apc-line); transform: translateX(-1px); transition: border-color 0.3s ease; }
+  .apc.has-sel .apc-l1::before{ border-color: var(--apc-lit); }
+  .apc-l1 > .apc-item{ flex: 1 1 0; min-width: 0; padding: 1.2rem 0.3rem 0; }
+  /* barra horizontal (mitad izquierda y derecha) y bajada hacia cada elemento */
+  .apc-l1 > .apc-item::before,
+  .apc-l1 > .apc-item::after{ content: ""; position: absolute; top: 0; width: 50%; border-top: 2px solid var(--apc-line); transition: border-color 0.3s ease; }
+  .apc-l1 > .apc-item::before{ right: 50%; height: 1.2rem; border-right: 2px solid var(--apc-line); transform: translateX(1px); }
+  .apc-l1 > .apc-item::after{ left: 50%; }
+  .apc-l1 > .apc-item:first-child::before{ border-top-width: 0; }
+  .apc-l1 > .apc-item:last-child::after{ display: none; }
+  .apc-l1 > .apc-item.is-path::before,
+  .apc-l1 > .apc-item.is-path::after,
+  .apc-l1 > .apc-item.is-sub::before,
+  .apc-l1 > .apc-item.is-sub::after{ border-color: var(--apc-lit); }
+  .apc-l1 > .apc-item.is-sub::before,
+  .apc-l1 > .apc-item.is-sub::after{ opacity: 0.6; }
+  /* módulos: columna bajo "Módulos", unida por una línea central */
+  .apc-l2{ position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.55rem; padding-top: 1.4rem; }
+  .apc-l2::before{ content: ""; position: absolute; top: 0; bottom: 1.4rem; left: 50%; border-left: 2px solid var(--apc-line); transform: translateX(-1px); transition: border-color 0.3s ease; }
+  .apc-item.is-path > .apc-l2::before,
+  .apc-item.is-sub > .apc-l2::before{ border-color: var(--apc-lit); }
+  .apc-l2 > .apc-item{ position: relative; z-index: 1; width: 100%; }
+}
+
+/* ===== Móvil y tableta: árbol vertical ===== */
+@media (max-width: 899px){
+  .apc{ padding: 1.1rem; }
+  .apc-labels{ justify-content: flex-start; }
+  .apc-l1, .apc-l2{ margin: 0 0 0 1.1rem; border-left: 2px solid var(--apc-line); transition: border-color 0.3s ease; }
+  .apc-l1{ padding-top: 0.2rem; }
+  .apc-l2{ margin-top: 0.2rem; }
+  .apc-item.is-path > ul,
+  .apc-item.is-sub > ul{ border-color: var(--apc-lit); }
+  .apc-l1 > .apc-item,
+  .apc-l2 > .apc-item{ padding: 0.3rem 0 0.3rem 1.2rem; }
+  .apc-l1 > .apc-item::before,
+  .apc-l2 > .apc-item::before{ content: ""; position: absolute; left: 0; top: calc(0.3rem + 22px); width: 1.1rem; border-top: 2px solid var(--apc-line); transition: border-color 0.3s ease; }
+  .apc-l1 > .apc-item.is-path::before,
+  .apc-l2 > .apc-item.is-path::before,
+  .apc-l1 > .apc-item.is-sub::before,
+  .apc-l2 > .apc-item.is-sub::before{ border-color: var(--apc-lit); }
+  .apc-detail{ min-height: 12rem; }
+}
+@media (prefers-reduced-motion: reduce){
+  .apc *, .apc *::before, .apc *::after{ transition: none !important; }
+}
+@media (max-width: 420px){
+  .apc-detail{ min-height: 14rem; }
+}
+@media (max-width: 340px){
+  .apc-detail{ min-height: 15.2rem; }
+}

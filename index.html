@@ -8,25 +8,30 @@
   <meta name="theme-color" content="#05060a" />
   <link rel="canonical" href="https://textoprostudio.com/" />
 
-  <link rel="icon" type="image/png" href="assets/logo/favicon.png" />
-  <link rel="apple-touch-icon" href="assets/logo/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/logo/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="TextoPro Studio" />
   <meta property="og:url" content="https://textoprostudio.com/" />
   <meta property="og:title" content="TextoPro Studio | Comunicación, Digitalización e IA para tu negocio" />
   <meta property="og:description" content="Transformamos ideas en soluciones digitales: comunicación, estrategia, digitalización e inteligencia artificial en un mismo estudio." />
-  <meta property="og:image" content="https://textoprostudio.com/assets/logo/logo-principal-oscuro.png" />
+  <meta property="og:image" content="https://textoprostudio.com/assets/logo/logo-textopro-og.jpg" />
   <meta name="twitter:card" content="summary" />
 
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/vivo-base.css" />
+  <link rel="stylesheet" href="css/vivo-inicio.css" />
+  <link rel="stylesheet" href="css/vivo-soluciones.css" />
+  <noscript><link rel="stylesheet" href="css/nojs.css" /></noscript>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="topbar">
     <div class="container topbar-inner">
       <div class="logo-block">
-        <div class="logo-circle"><img src="assets/logo/logo-principal-oscuro.png" alt="TextoPro Studio" class="logo-img" /></div>
+        <div class="logo-circle"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" width="400" height="400" class="logo-img" /></div>
         <div class="logo-text">
           <span class="brand-main">TextoPro Studio</span>
           <span class="brand-tagline">Donde tus ideas alcanzan su mejor versión</span>
@@ -39,7 +44,7 @@
         <span class="nav-toggle-bar"></span>
       </button>
 
-      <nav class="nav" id="siteNav">
+      <nav class="nav" id="siteNav" aria-label="Navegación principal">
         <a href="#soluciones">Soluciones</a>
         <a href="#digitalizacion">Digitalización</a>
         <a href="#ia">IA</a>
@@ -54,23 +59,90 @@
   </header>
 
   <main id="contenido" tabindex="-1">
-    <section class="hero">
+    <section class="hero hero-vivo">
       <div class="container hero-grid">
         <div class="hero-text">
           <h1>Transformamos ideas en<br><span class="accent">soluciones digitales.</span></h1>
           <p>Comunicación, estrategia, digitalización e inteligencia artificial para negocios que quieren avanzar.</p>
           <div class="hero-actions">
             <a href="#soluciones" class="btn-primary">Conoce nuestras soluciones</a>
-            <a href="ia.html" class="btn-secondary">Habla con TextoPro</a>
+            <a href="https://wa.me/529984176934?text=Hola%20TextoPro%20Studio%2C%20quiero%20platicar%20sobre%20mi%20negocio." class="btn-secondary" target="_blank" rel="noopener">Habla con TextoPro</a>
           </div>
           <span class="badge-soon badge-soon--inline">TextoPro AI conversacional: próximamente</span>
         </div>
-        <div class="hero-visual">
-          <div class="hero-visual-glow" aria-hidden="true"></div>
-          <img src="assets/images/hero.svg" alt="" class="hero-img" loading="eager" />
-          <div class="hero-chip hero-chip--top" aria-hidden="true"><span class="hero-chip-dot"></span>Comunicación + Estrategia</div>
-          <div class="hero-chip hero-chip--bottom" aria-hidden="true"><span class="hero-chip-dot hero-chip-dot--accent"></span>Digitalización + IA</div>
-          <p class="small-note">* Visual conceptual para acompañar el mensaje (no es un caso real).</p>
+        <div class="hero-scene" id="heroScene">
+          <div class="hero-stage">
+            <img class="hero-photo" src="assets/images/hero-red-viva.webp" alt="" width="1053" height="583" fetchpriority="high" decoding="async" />
+            <svg class="hero-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <line x1="24" y1="16" x2="70" y2="30" />
+              <line x1="70" y1="30" x2="78" y2="70" />
+              <line x1="78" y1="70" x2="34" y2="58" />
+              <line x1="34" y1="58" x2="24" y2="16" />
+              <line x1="70" y1="30" x2="34" y2="58" />
+            </svg>
+            <canvas class="hero-net" aria-hidden="true"></canvas>
+            <ul class="hero-nodes" aria-label="Capacidades de TextoPro Studio">
+              <li style="--x:24%;--y:16%"><a class="hero-node" href="servicios.html" data-node="comunicacion" data-x="24" data-y="16" aria-describedby="hero-d-comunicacion"><span class="hero-node-dot" aria-hidden="true"></span>Comunicación</a></li>
+              <li style="--x:70%;--y:30%"><a class="hero-node" href="servicios.html#comunicacion-estrategica" data-node="estrategia" data-x="70" data-y="30" aria-describedby="hero-d-estrategia"><span class="hero-node-dot" aria-hidden="true"></span>Estrategia</a></li>
+              <li style="--x:34%;--y:58%"><a class="hero-node" href="digitalizacion.html" data-node="digitalizacion" data-x="34" data-y="58" aria-describedby="hero-d-digitalizacion"><span class="hero-node-dot" aria-hidden="true"></span>Digitalización</a></li>
+              <li style="--x:78%;--y:70%"><a class="hero-node" href="ia.html" data-node="ia" data-x="78" data-y="70" aria-describedby="hero-d-ia"><span class="hero-node-dot" aria-hidden="true"></span>IA</a></li>
+            </ul>
+            <button type="button" class="vivo-pause hero-pause" hidden aria-pressed="false" aria-label="Pausar animación"><span class="vivo-pause-icon" aria-hidden="true"></span></button>
+          </div>
+          <div class="hero-panel">
+            <ul class="hero-info">
+              <li data-for="comunicacion">
+                <p class="hero-info-title">Comunicación</p>
+                <p id="hero-d-comunicacion">Mensajes claros, contenido y presencia digital para decir lo correcto a la persona correcta.</p>
+                <a class="card-link" href="servicios.html">Ver servicios <span aria-hidden="true">→</span></a>
+              </li>
+              <li data-for="estrategia">
+                <p class="hero-info-title">Estrategia</p>
+                <p id="hero-d-estrategia">Antes de ejecutar, entendemos qué necesita lograr tu negocio y definimos un camino claro.</p>
+                <a class="card-link" href="servicios.html#comunicacion-estrategica">Ver comunicación estratégica <span aria-hidden="true">→</span></a>
+              </li>
+              <li data-for="digitalizacion">
+                <p class="hero-info-title">Digitalización</p>
+                <p id="hero-d-digitalizacion">Convertimos procesos manuales y dispersos en sitios, sistemas y flujos digitales que funcionan mejor.</p>
+                <a class="card-link" href="digitalizacion.html">Ver digitalización <span aria-hidden="true">→</span></a>
+              </li>
+              <li data-for="ia">
+                <p class="hero-info-title">IA</p>
+                <p id="hero-d-ia">Asistentes, agentes y automatización aplicados a procesos reales. TextoPro AI está en desarrollo.</p>
+                <a class="card-link" href="ia.html">Ver inteligencia artificial <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
+            <p class="hero-touch-hint">En pantallas táctiles, toca un nodo para leer su descripción y tócalo de nuevo para abrirlo.</p>
+            <div class="hero-flow">
+              <p class="vivo-badge">Demostración conceptual</p>
+              <ol class="hero-flow-steps" aria-label="Ejemplo ilustrativo: de un proceso manual a un resultado visible">
+                <li style="--i:0">Proceso manual</li>
+                <li style="--i:1">Proceso digital</li>
+                <li style="--i:2">Automatización</li>
+                <li style="--i:3">Resultado visible</li>
+              </ol>
+              <p class="hero-caption">* Visual conceptual. La red y el flujo ilustran cómo se conectan las capacidades; no son un sistema en funcionamiento ni un caso real.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cap-strip" aria-labelledby="cap-title">
+      <div class="container">
+        <div class="cap-head">
+          <h2 id="cap-title" class="cap-title">Capacidades tecnológicas</h2>
+          <button type="button" class="vivo-pause cap-pause" hidden aria-pressed="false" aria-label="Pausar franja de capacidades"><span class="vivo-pause-icon" aria-hidden="true"></span></button>
+        </div>
+        <div class="cap-viewport">
+          <ul class="cap-track">
+            <li class="cap-item"><span class="cap-dot" aria-hidden="true"></span>Digitalización</li>
+            <li class="cap-item"><span class="cap-dot" aria-hidden="true"></span>Automatización</li>
+            <li class="cap-item"><span class="cap-dot" aria-hidden="true"></span>Agentes de IA</li>
+            <li class="cap-item"><span class="cap-dot" aria-hidden="true"></span>Sistemas internos</li>
+            <li class="cap-item"><span class="cap-dot" aria-hidden="true"></span>Integraciones</li>
+            <li class="cap-item"><span class="cap-dot" aria-hidden="true"></span>Herramientas digitales</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -92,31 +164,134 @@
       <div class="container">
         <h2 class="section-title">Lo que podemos hacer por tu negocio</h2>
         <p class="section-subtitle">Cuatro líneas de trabajo, un mismo objetivo: negocios que funcionan mejor.</p>
-        <div class="cards-grid solutions-grid">
-          <article class="card solution-card">
-            <span class="solution-number">01</span>
-            <h3>Comunicación &amp; Marketing</h3>
-            <p>Estrategia de comunicación, copywriting que convierte y optimización de tu presencia digital, para decir lo correcto a la persona correcta.</p>
-            <a class="card-link" href="servicios.html">Explorar <span aria-hidden="true">→</span></a>
-          </article>
-          <article class="card solution-card">
-            <span class="solution-number">02</span>
-            <h3>Digitalización</h3>
-            <p>Convertimos procesos manuales y dispersos en sitios, sistemas y flujos digitales que hacen que tu negocio funcione mejor.</p>
-            <a class="card-link" href="digitalizacion.html">Explorar <span aria-hidden="true">→</span></a>
-          </article>
-          <article class="card solution-card">
-            <span class="solution-number">03</span>
-            <h3>Inteligencia Artificial</h3>
-            <p>Implementación de IA, agentes y automatización inteligente aplicados a procesos y comunicación de negocio.</p>
-            <a class="card-link" href="ia.html">Explorar <span aria-hidden="true">→</span></a>
-          </article>
-          <article class="card solution-card">
-            <span class="solution-number">04</span>
-            <h3>Productos Digitales</h3>
-            <p>Guías descargables y TextoPro Lab: herramientas propias que puedes probar directamente.</p>
-            <a class="card-link" href="lab.html">Explorar <span aria-hidden="true">→</span></a>
-          </article>
+        <div class="sol-carousel" id="solCarousel">
+          <div class="sol-panels">
+            <article class="sol-panel" data-title="Comunicación">
+              <div class="sol-visual sx sx--com" data-sx="com" data-hl="route">
+                <div class="sx-stage">
+                  <svg class="sx-art" viewBox="0 0 320 256" aria-hidden="true" focusable="false" preserveAspectRatio="none">
+                    <g class="sx-back"><circle cx="160" cy="66.6" r="58"/><circle cx="160" cy="66.6" r="96"/></g>
+                    <g class="sx-edges">
+                      <path class="sx-edge" data-e="estrategia mensaje" d="M160 15.4 L160 66.6"/>
+                      <path class="sx-edge" data-e="mensaje web" d="M160 66.6 C160 92.2 64 92.2 64 117.8"/>
+                      <path class="sx-edge" data-e="mensaje redes" d="M160 66.6 L160 117.8"/>
+                      <path class="sx-edge" data-e="mensaje whatsapp" d="M160 66.6 C160 92.2 256 92.2 256 117.8"/>
+                      <path class="sx-edge" data-e="web publico" d="M64 117.8 C64 143.4 160 143.4 160 169"/>
+                      <path class="sx-edge" data-e="redes publico" d="M160 117.8 L160 169"/>
+                      <path class="sx-edge" data-e="whatsapp publico" d="M256 117.8 C256 143.4 160 143.4 160 169"/>
+                    </g>
+                  </svg>
+                  <ul class="sx-nodes" aria-label="Elementos del esquema de comunicación">
+                    <li class="sx-pos" style="--x:50%;--y:6%"><span class="sx-node sx-node--pill" data-node="estrategia" data-name="Estrategia" data-path="estrategia mensaje" data-desc="Antes de escribir, se define qué se quiere lograr y a quién se le habla."><span class="sx-face">Estrategia</span></span></li>
+                    <li class="sx-pos" style="--x:50%;--y:26%"><span class="sx-node sx-node--pill sx-node--msg" data-node="mensaje" data-name="Mensaje" data-path="estrategia mensaje web redes whatsapp" data-desc="Una idea central, dicha con claridad y con el tono del negocio."><span class="sx-face"><svg class="pv pv-default" viewBox="0 0 28 22" aria-hidden="true" focusable="false"><rect x="3" y="4" width="22" height="3" rx="1.5"/><rect x="3" y="10" width="16" height="3" rx="1.5"/><rect x="3" y="16" width="19" height="3" rx="1.5"/></svg><svg class="pv pv-web" viewBox="0 0 28 22" aria-hidden="true" focusable="false"><rect class="pv-o" x="2" y="2" width="24" height="18" rx="3"/><rect x="2" y="2" width="24" height="5" rx="2"/><rect x="5" y="10" width="11" height="3" rx="1.5"/><rect x="5" y="15" width="16" height="2" rx="1"/></svg><svg class="pv pv-redes" viewBox="0 0 28 22" aria-hidden="true" focusable="false"><rect class="pv-o" x="6" y="1.5" width="16" height="13" rx="3"/><circle cx="14" cy="8" r="3.2"/><rect x="6" y="17.5" width="16" height="2.5" rx="1.25"/></svg><svg class="pv pv-whatsapp" viewBox="0 0 28 22" aria-hidden="true" focusable="false"><rect x="2" y="2" width="15" height="7" rx="3.5"/><rect x="11" y="12" width="15" height="7" rx="3.5"/></svg><span class="sx-face-t">Mensaje</span></span></span></li>
+                    <li class="sx-pos" style="--x:20%;--y:46%"><span class="sx-node sx-node--pill" data-node="web" data-name="Sitio web" data-path="estrategia mensaje web publico" data-desc="Espacio para explicar: secciones claras y un llamado a la acción."><span class="sx-face">Sitio web</span></span></li>
+                    <li class="sx-pos" style="--x:50%;--y:46%"><span class="sx-node sx-node--pill" data-node="redes" data-name="Redes sociales" data-path="estrategia mensaje redes publico" data-desc="El mismo mensaje en formato breve y visual, adaptado a cada red."><span class="sx-face">Redes</span></span></li>
+                    <li class="sx-pos" style="--x:80%;--y:46%"><span class="sx-node sx-node--pill" data-node="whatsapp" data-name="WhatsApp" data-path="estrategia mensaje whatsapp publico" data-desc="Conversación directa: respuestas claras y un siguiente paso fácil."><span class="sx-face">WhatsApp</span></span></li>
+                    <li class="sx-pos" style="--x:50%;--y:66%"><span class="sx-node sx-node--pill" data-node="publico" data-name="Público" data-path="web redes whatsapp publico" data-desc="La persona correcta: recibe lo que necesita saber para decidir."><span class="sx-face">Público</span></span></li>
+                  </ul>
+                  <p class="sx-read" aria-live="polite" aria-atomic="true"><span class="sx-read-in"><span class="sx-read-t">Esquema conceptual</span> <span class="sx-read-d">Elige un elemento para ver su papel.</span></span></p>
+                </div>
+              </div>
+              <div class="sol-body">
+                <span class="solution-number">01</span>
+                <h3>Comunicación &amp; Marketing</h3>
+                <p>Estrategia de comunicación, copywriting que convierte y optimización de tu presencia digital, para decir lo correcto a la persona correcta.</p>
+                <p class="sol-note">Esquema conceptual: ilustra cómo se relacionan estrategia, mensaje y canal; no muestra resultados reales.</p>
+                <a class="card-link" href="servicios.html">Explorar <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+            <article class="sol-panel" data-title="Digitalización">
+              <div class="sol-visual sx sx--dig" data-sx="dig" data-hl="incident">
+                <div class="sx-stage">
+                  <svg class="sx-art" viewBox="0 0 320 256" aria-hidden="true" focusable="false" preserveAspectRatio="none">
+                    <g class="sx-back"><rect x="46" y="62" width="228" height="124" rx="18"/></g>
+                    <g class="sx-edges">
+                      <path class="sx-edge" data-e="documentos tareas" d="M89.6 97.3 L230.4 97.3"/>
+                      <path class="sx-edge" data-e="documentos seguimiento" d="M89.6 97.3 L89.6 163.8"/>
+                      <path class="sx-edge" data-e="tareas panel" d="M230.4 97.3 L230.4 163.8"/>
+                      <path class="sx-edge" data-e="seguimiento panel" d="M89.6 163.8 L230.4 163.8"/>
+                    </g>
+                  </svg>
+                  <ul class="sx-nodes" aria-label="Piezas del esquema de digitalización">
+                    <li class="sx-pos" style="--x:28%;--y:38%;--dx:-6%;--dy:-10%;--r:-9deg"><span class="sx-node sx-node--card" data-node="documentos" data-name="Documentos" data-name0="Archivos" data-path="documentos tareas seguimiento" data-desc="Archivos y registros ordenados en un solo lugar, fáciles de encontrar." data-desc0="Información repartida en archivos sueltos: cuesta encontrarla y mantenerla al día."><span class="sx-face"><span class="sx-t0" aria-hidden="true">Archivos</span><span class="sx-t1">Documentos</span></span></span></li>
+                    <li class="sx-pos" style="--x:72%;--y:38%;--dx:6%;--dy:-13%;--r:8deg"><span class="sx-node sx-node--card" data-node="tareas" data-name="Tareas" data-name0="Notas" data-path="tareas documentos panel" data-desc="Lo pendiente queda asignado y a la vista, en vez de repartido en notas." data-desc0="Pendientes anotados aquí y allá: se pierden o se duplican."><span class="sx-face"><span class="sx-t0" aria-hidden="true">Notas</span><span class="sx-t1">Tareas</span></span></span></li>
+                    <li class="sx-pos" style="--x:28%;--y:64%;--dx:1%;--dy:3%;--r:6deg"><span class="sx-node sx-node--card" data-node="seguimiento" data-name="Seguimiento" data-name0="Mensajes" data-path="seguimiento documentos panel" data-desc="Cada caso con su estado: qué se hizo, qué sigue y quién lo tiene." data-desc0="El seguimiento vive en conversaciones: cuesta saber en qué va cada cosa."><span class="sx-face"><span class="sx-t0" aria-hidden="true">Mensajes</span><span class="sx-t1">Seguimiento</span></span></span></li>
+                    <li class="sx-pos" style="--x:72%;--y:64%;--dx:-1%;--dy:-7%;--r:-7deg"><span class="sx-node sx-node--card" data-node="panel" data-name="Panel de control" data-name0="Hoja de cálculo" data-path="panel tareas seguimiento" data-desc="Una vista que reúne lo anterior para revisar el conjunto de un vistazo." data-desc0="Una hoja para cada cosa: los datos no se cruzan con nada más."><span class="sx-face"><span class="sx-t0" aria-hidden="true">Hoja de cálculo</span><span class="sx-t1">Panel de control</span></span></span></li>
+                  </ul>
+                  <p class="sx-read" aria-live="polite" aria-atomic="true"><span class="sx-read-in"><span class="sx-read-t">Esquema conceptual</span> <span class="sx-read-d">De piezas sueltas a un sistema conectado. Elige una pieza para ver su papel.</span></span></p>
+                </div>
+              </div>
+              <div class="sol-body">
+                <span class="solution-number">02</span>
+                <h3>Digitalización</h3>
+                <p>Convertimos procesos manuales y dispersos en sitios, sistemas y flujos digitales que hacen que tu negocio funcione mejor.</p>
+                <p class="sol-note">Esquema conceptual: no es un sistema real ni una integración.</p>
+                <a class="card-link" href="digitalizacion.html">Explorar <span aria-hidden="true">→</span></a>
+                <a class="card-link" href="digitalizacion.html#transformacion">Ver la demostración Antes/Después <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+            <article class="sol-panel" data-title="IA">
+              <div class="sol-visual sx sx--ia" data-sx="ia" data-hl="incident">
+                <div class="sx-stage">
+                  <svg class="sx-art" viewBox="0 0 320 256" aria-hidden="true" focusable="false" preserveAspectRatio="none">
+                    <g class="sx-back"><circle cx="160" cy="87" r="46"/><circle cx="160" cy="87" r="76"/><circle cx="160" cy="87" r="112"/></g>
+                    <g class="sx-edges">
+                      <path class="sx-edge" data-e="nucleo contenido" d="M160 87 Q110.4 56.7 54.4 41"/>
+                      <path class="sx-edge" data-e="nucleo atencion" d="M160 87 Q209.6 56.7 265.6 41"/>
+                      <path class="sx-edge" data-e="nucleo procesos" d="M160 87 L160 156.2"/>
+                      <path class="sx-edge" data-e="nucleo reglas" d="M160 87 L160 17.9"/>
+                      <path class="sx-edge" data-e="herramientas contenido" d="M57.6 125.4 Q66 82.8 54.4 41"/>
+                      <path class="sx-edge" data-e="herramientas procesos" d="M57.6 125.4 Q112.3 129.3 160 156.2"/>
+                      <path class="sx-edge" data-e="contexto atencion" d="M262.4 125.4 Q254 82.8 265.6 41"/>
+                      <path class="sx-edge" data-e="contexto procesos" d="M262.4 125.4 Q207.7 129.3 160 156.2"/>
+                    </g>
+                    <g class="sx-flows">
+                      <path class="sx-flow" data-e="nucleo contenido" pathLength="100" d="M160 87 Q110.4 56.7 54.4 41"/>
+                      <path class="sx-flow" data-e="nucleo atencion" pathLength="100" d="M160 87 Q209.6 56.7 265.6 41"/>
+                      <path class="sx-flow" data-e="nucleo procesos" pathLength="100" d="M160 87 L160 156.2"/>
+                      <path class="sx-flow" data-e="nucleo reglas" pathLength="100" d="M160 87 L160 17.9"/>
+                      <path class="sx-flow" data-e="herramientas contenido" pathLength="100" d="M57.6 125.4 Q66 82.8 54.4 41"/>
+                      <path class="sx-flow" data-e="herramientas procesos" pathLength="100" d="M57.6 125.4 Q112.3 129.3 160 156.2"/>
+                      <path class="sx-flow" data-e="contexto atencion" pathLength="100" d="M262.4 125.4 Q254 82.8 265.6 41"/>
+                      <path class="sx-flow" data-e="contexto procesos" pathLength="100" d="M262.4 125.4 Q207.7 129.3 160 156.2"/>
+                    </g>
+                  </svg>
+                  <ul class="sx-nodes" aria-label="Elementos del esquema de inteligencia artificial">
+                    <li class="sx-pos" style="--x:50%;--y:34%"><span class="sx-node sx-node--orb sx-node--core" data-node="nucleo" data-name="Núcleo de IA" data-path="nucleo contenido atencion procesos reglas" data-desc="Concepto: coordina a los agentes y reparte el trabajo según el contexto y las reglas."><span class="sx-orb sx-orb--core" aria-hidden="true"><b>IA</b></span><span class="sx-l sx-l--b">Núcleo</span></span></li>
+                    <li class="sx-pos" style="--x:17%;--y:16%"><span class="sx-node sx-node--orb sx-node--agent" data-node="contenido" data-name="Agente de contenido (ejemplo)" data-path="contenido nucleo herramientas" data-desc="Podría preparar borradores a partir del contexto y las reglas."><span class="sx-orb sx-orb--agent" aria-hidden="true"></span><span class="sx-l sx-l--b">Contenido</span></span></li>
+                    <li class="sx-pos" style="--x:83%;--y:16%"><span class="sx-node sx-node--orb sx-node--agent" data-node="atencion" data-name="Agente de atención (ejemplo)" data-path="atencion nucleo contexto" data-desc="Podría responder dudas frecuentes con límites definidos."><span class="sx-orb sx-orb--agent" aria-hidden="true"></span><span class="sx-l sx-l--b">Atención</span></span></li>
+                    <li class="sx-pos" style="--x:50%;--y:61%"><span class="sx-node sx-node--orb sx-node--agent" data-node="procesos" data-name="Agente de procesos (ejemplo)" data-path="procesos nucleo herramientas contexto" data-desc="Podría apoyar tareas repetitivas de un flujo digital."><span class="sx-orb sx-orb--agent" aria-hidden="true"></span><span class="sx-l sx-l--r">Procesos</span></span></li>
+                    <li class="sx-pos" style="--x:18%;--y:49%"><span class="sx-node sx-node--orb sx-node--aux" data-node="herramientas" data-name="Herramientas" data-path="herramientas contenido procesos" data-desc="Habilitadas para cada función: consultar información, preparar un borrador."><span class="sx-orb sx-orb--aux" aria-hidden="true"></span><span class="sx-l sx-l--b">Herramientas</span></span></li>
+                    <li class="sx-pos" style="--x:82%;--y:49%"><span class="sx-node sx-node--orb sx-node--aux" data-node="contexto" data-name="Contexto" data-path="contexto atencion procesos" data-desc="La información del negocio que un agente podría considerar."><span class="sx-orb sx-orb--aux" aria-hidden="true"></span><span class="sx-l sx-l--b">Contexto</span></span></li>
+                    <li class="sx-pos" style="--x:50%;--y:7%"><span class="sx-node sx-node--orb sx-node--aux" data-node="reglas" data-name="Reglas" data-path="reglas nucleo" data-desc="Los límites y criterios definidos para cada función."><span class="sx-orb sx-orb--aux" aria-hidden="true"></span><span class="sx-l sx-l--r">Reglas</span></span></li>
+                  </ul>
+                  <p class="sx-read" aria-live="polite" aria-atomic="true"><span class="sx-read-in"><span class="sx-read-t">Visualización conceptual</span> <span class="sx-read-d">TextoPro AI está en desarrollo. Elige un nodo para ver su papel.</span></span></p>
+                </div>
+              </div>
+              <div class="sol-body">
+                <span class="solution-number">03</span>
+                <h3>Inteligencia Artificial</h3>
+                <p>Implementación de IA, agentes y automatización inteligente aplicados a procesos y comunicación de negocio.</p>
+                <p class="sol-note">Visualización conceptual. TextoPro AI está en desarrollo: no hay agentes ejecutándose en este sitio.</p>
+                <a class="card-link" href="ia.html">Explorar <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+            <article class="sol-panel" data-title="Productos">
+              <div class="sol-visual sol-visual--products" aria-hidden="true">
+                <img class="sol-cover" src="assets/images/guia-amazon-portada.webp" alt="" width="840" height="1054" loading="lazy" decoding="async" />
+                <div class="mini-lab">
+                  <span class="mini-lab-field"></span><span class="mini-lab-field"></span><span class="mini-lab-field mini-lab-field--short"></span>
+                  <span class="mini-lab-result"></span><span class="mini-lab-result"></span><span class="mini-lab-result"></span>
+                </div>
+              </div>
+              <div class="sol-body">
+                <span class="solution-number">04</span>
+                <h3>Productos Digitales</h3>
+                <p>Guías descargables y TextoPro Lab: herramientas propias que puedes probar directamente.</p>
+                <a class="card-link" href="lab.html">Explorar <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -137,15 +312,14 @@
           </ul>
           <a class="btn-secondary" href="digitalizacion.html">Explorar digitalización</a>
         </div>
-        <div class="mock-dashboard" aria-hidden="true">
-          <div class="mock-dashboard-header">
-            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-          </div>
-          <div class="mock-bar" style="width:78%"></div>
-          <div class="mock-bar" style="width:52%"></div>
-          <div class="mock-bar" style="width:91%"></div>
-          <div class="mock-chip">Automatización activa</div>
-        </div>
+        <figure class="digi-photo">
+          <img
+            src="assets/images/digitalizacion-inicio-1200.webp"
+            srcset="assets/images/digitalizacion-inicio-640.webp 640w, assets/images/digitalizacion-inicio-1200.webp 1200w"
+            sizes="(max-width: 900px) 92vw, 460px"
+            alt="Emprendedor señalando con el dedo una gráfica de crecimiento en una interfaz holográfica con iconos de documentos, engranaje, nube y paneles de datos."
+            width="1200" height="800" loading="lazy" decoding="async" />
+        </figure>
       </div>
     </section>
 
@@ -168,14 +342,14 @@
     <section id="lab" class="section section-alt" data-reveal>
       <div class="container">
         <h2 class="section-title">Prueba. Experimenta. Resuelve.</h2>
-        <p class="section-subtitle">TextoPro Lab es nuestro laboratorio de herramientas digitales. Primer producto:</p>
+        <p class="section-subtitle">TextoPro Lab es nuestro laboratorio de herramientas digitales gratuitas. Hoy ofrece tres, que funcionan en tu navegador, sin registro y sin inteligencia artificial.</p>
         <article class="card lab-card">
           <span class="badge-available">Disponible ahora</span>
-          <h3>Generador de anuncios</h3>
-          <p>Estructura anuncios para tu negocio a partir de plantillas de copywriting probadas: cuéntanos tu producto y tu público, y te devolvemos una primera versión lista para ajustar.</p>
-          <p class="section-note">Pruébalo gratis. Sin registro. V1 · Motor de plantillas (no utiliza IA generativa).</p>
+          <h3>Tres herramientas gratuitas</h3>
+          <p>Un generador de anuncios, una calculadora de precio y margen para vender en marketplaces y un generador de enlaces de WhatsApp. Tú escribes tus datos, la herramienta arma el borrador o el cálculo y después tú lo revisas y lo ajustas.</p>
+          <p class="section-note">Gratis y sin registro. Los anuncios se arman con estructuras de redacción predefinidas (no usan IA generativa) y la calculadora usa los datos que escribes: no son tarifas oficiales ni asesoría contable.</p>
           <div class="card-actions lab-card-actions">
-            <a class="btn-primary" href="lab.html">Probar generador</a>
+            <a class="btn-primary" href="lab.html">Explorar Lab</a>
           </div>
         </article>
       </div>
@@ -208,58 +382,46 @@
         <h2 class="section-title">Programas</h2>
         <p class="section-subtitle">Acompañamiento claro, humano y orientado a resultados. Elige el nivel que necesitas hoy.</p>
 
-        <div class="section-visual">
-          <img src="assets/images/programas.svg" alt="" class="section-img" loading="lazy" />
-        </div>
-
-        <div class="cards-grid">
-          <article class="card program-card solution-card">
-            <span class="solution-number">01</span>
-            <h3>TextoPro Base</h3>
-            <p>Para emprendedores que están iniciando o se sienten confundidos. Aquí buscamos claridad antes de gastar más tiempo o dinero.</p>
-            <ul>
-              <li>Diagnóstico claro de tu proyecto</li>
-              <li>Mensaje principal (simple y potente)</li>
-              <li>Recomendaciones accionables</li>
-              <li>Qué hacer y qué evitar</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn-secondary btn-small" href="https://wa.me/529984176934?text=Hola%20TextoPro%20Studio%2C%20quiero%20informaci%C3%B3n%20del%20Programa%20TextoPro%20Base." target="_blank" rel="noopener">Solicitar información</a>
+        <div class="cards-grid cards-grid--two">
+          <article class="card program-card solution-card program-card--base">
+            <div class="program-media">
+              <img src="assets/images/programa-base.webp" alt="Tarjeta del programa TextoPro Base: un cohete plateado sobre fondo azul eléctrico" width="640" height="960" loading="lazy" decoding="async" />
+            </div>
+            <div class="program-body">
+              <span class="solution-number">01</span>
+              <h3>TextoPro Base</h3>
+              <p>Para emprendedores que están iniciando o se sienten confundidos. Aquí buscamos claridad antes de gastar más tiempo o dinero.</p>
+              <ul>
+                <li>Diagnóstico claro de tu proyecto</li>
+                <li>Mensaje principal (simple y potente)</li>
+                <li>Recomendaciones accionables</li>
+                <li>Qué hacer y qué evitar</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn-secondary btn-small" href="https://wa.me/529984176934?text=Hola%20TextoPro%20Studio%2C%20quiero%20informaci%C3%B3n%20del%20Programa%20TextoPro%20Base." target="_blank" rel="noopener">Solicitar información</a>
+              </div>
             </div>
           </article>
 
-          <article class="card program-card solution-card">
-            <span class="solution-number">02</span>
-            <h3>TextoPro Growth</h3>
-            <p>Para quienes ya quieren vender o estructurar su oferta. Trabajamos tu comunicación para que conecte y convierta.</p>
-            <ul>
-              <li>Estrategia de comunicación</li>
-              <li>Mensaje comercial claro</li>
-              <li>Copy base para página/oferta</li>
-              <li>Ajustes orientados a conversión</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn-secondary btn-small" href="https://wa.me/529984176934?text=Hola%20TextoPro%20Studio%2C%20quiero%20informaci%C3%B3n%20del%20Programa%20TextoPro%20Growth." target="_blank" rel="noopener">Solicitar información</a>
+          <article class="card program-card solution-card program-card--crecimiento">
+            <div class="program-media">
+              <img src="assets/images/programa-crecimiento.webp" alt="Tarjeta del programa TextoPro Crecimiento: una flecha ascendente sobre barras en verde" width="640" height="960" loading="lazy" decoding="async" />
+            </div>
+            <div class="program-body">
+              <span class="solution-number">02</span>
+              <h3>TextoPro Crecimiento</h3>
+              <p>Para quienes ya quieren vender o estructurar su oferta. Trabajamos tu comunicación para que conecte y convierta.</p>
+              <ul>
+                <li>Estrategia de comunicación</li>
+                <li>Mensaje comercial claro</li>
+                <li>Copy base para página/oferta</li>
+                <li>Ajustes orientados a conversión</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn-secondary btn-small" href="https://wa.me/529984176934?text=Hola%20TextoPro%20Studio%2C%20quiero%20informaci%C3%B3n%20del%20Programa%20TextoPro%20Crecimiento." target="_blank" rel="noopener">Solicitar información</a>
+              </div>
             </div>
           </article>
-
-          <!-- TextoPro Pro: preparado, no se muestra como oferta activa. Reactivar quitando este comentario cuando se apruebe. -->
-          <!--
-          <article class="card program-card solution-card">
-            <span class="solution-number">03</span>
-            <h3>TextoPro Pro</h3>
-            <p>Para negocios que quieren avanzar acompañados. Priorizamos acciones, afinamos el mensaje y ejecutamos con método.</p>
-            <ul>
-              <li>Acompañamiento estratégico</li>
-              <li>Revisión y ajustes continuos</li>
-              <li>Priorización de acciones</li>
-              <li>Visión de mediano plazo</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn-secondary btn-small" href="https://wa.me/529984176934?text=Hola%20TextoPro%20Studio%2C%20quiero%20informaci%C3%B3n%20del%20Programa%20TextoPro%20Pro%20%28Acompa%C3%B1amiento%29." target="_blank" rel="noopener">Solicitar información</a>
-            </div>
-          </article>
-          -->
         </div>
       </div>
     </section>
@@ -268,58 +430,49 @@
       <div class="container">
         <h2 class="section-title">Guías TextoPro</h2>
         <p class="section-subtitle">Guías prácticas en PDF. Pago seguro con PayPal.</p>
-        <div class="section-visual">
-          <img src="assets/images/guias.svg" alt="" class="section-img" loading="lazy" />
-        </div>
-
-        <div class="cards-grid">
-          <article class="card guide-card">
-            <h3>Guía para vender en Amazon desde cero</h3>
-            <p>Una guía paso a paso para empezar con estructura, claridad y enfoque en resultados. Ideal si vas desde cero y quieres evitar errores comunes.</p>
-
-            <div class="mini-faq">
-              <h4 class="mini-faq-title">Preguntas rápidas</h4>
-              <ul class="mini-faq-list">
-                <li><b>¿Es para principiantes?</b> Sí, está diseñada para empezar con estructura.</li>
-                <li><b>¿Y si ya lo intenté?</b> Te ayuda a ordenar y corregir lo que no estaba claro.</li>
-                <li><b>¿Necesito invertir más?</b> No: primero claridad y proceso, luego inversión.</li>
-              </ul>
+        <div class="guide-list">
+          <article class="card guide-card guide-feature">
+            <div class="guide-cover">
+              <img src="assets/images/guia-amazon-portada.webp" alt="Portada de la guía «Cómo vender en Amazon desde cero»" width="840" height="1054" loading="lazy" decoding="async" />
             </div>
+            <div class="guide-body">
+              <span class="badge-available">Disponible</span>
+              <h3>Guía para vender en Amazon desde cero</h3>
+              <p>Una guía paso a paso para empezar con estructura, claridad y enfoque en resultados. Ideal si vas desde cero y quieres evitar errores comunes.</p>
 
-            <a class="btn-secondary btn-full" data-guide="amazon" href="#" target="_blank" rel="noopener">Quiero esta guía</a>
+              <div class="mini-faq">
+                <h4 class="mini-faq-title">Preguntas rápidas</h4>
+                <ul class="mini-faq-list">
+                  <li><b>¿Es para principiantes?</b> Sí, está diseñada para empezar con estructura.</li>
+                  <li><b>¿Y si ya lo intenté?</b> Te ayuda a ordenar y corregir lo que no estaba claro.</li>
+                  <li><b>¿Necesito invertir más?</b> No: primero claridad y proceso, luego inversión.</li>
+                </ul>
+              </div>
+
+              <a class="btn-primary" data-guide="amazon" href="#contacto">Quiero esta guía</a>
+            </div>
           </article>
 
-          <article class="card guide-card">
-            <h3>Guía para vender en Mercado Libre de forma rentable</h3>
-            <p>Aprende a estructurar tu tienda, tus publicaciones y tu estrategia para vender de manera consistente y escalar sin caos.</p>
-
-            <div class="mini-faq">
-              <h4 class="mini-faq-title">Preguntas rápidas</h4>
-              <ul class="mini-faq-list">
-                <li><b>¿Sirve si ya tengo publicaciones?</b> Sí: te ayuda a optimizar y escalar sin caos.</li>
-                <li><b>¿Tengo que bajar precios?</b> No: compites con valor, estructura y claridad.</li>
-                <li><b>¿Cuánto tiempo necesito?</b> Con 30–60 min al día puedes avanzar constante.</li>
-              </ul>
+          <article class="card guide-card guide-feature guide-feature--soon">
+            <div class="guide-cover guide-cover--soon" aria-hidden="true">
+              <img src="assets/logo/logo-textopro-studio.webp" alt="" width="400" height="400" loading="lazy" decoding="async" />
             </div>
+            <div class="guide-body">
+              <span class="badge-soon">Próximamente</span>
+              <h3>Guía para vender en Mercado Libre de forma rentable</h3>
+              <p>Aprende a estructurar tu tienda, tus publicaciones y tu estrategia para vender de manera consistente y escalar sin caos.</p>
 
-            <span class="badge-soon badge-soon--block">Próximamente</span>
-            <button type="button" class="btn-secondary btn-full" disabled aria-disabled="true">Quiero esta guía</button>
-          </article>
+              <div class="mini-faq">
+                <h4 class="mini-faq-title">Preguntas rápidas</h4>
+                <ul class="mini-faq-list">
+                  <li><b>¿Sirve si ya tengo publicaciones?</b> Sí: te ayuda a optimizar y escalar sin caos.</li>
+                  <li><b>¿Tengo que bajar precios?</b> No: compites con valor, estructura y claridad.</li>
+                  <li><b>¿Cuánto tiempo necesito?</b> Con 30–60 min al día puedes avanzar constante.</li>
+                </ul>
+              </div>
 
-          <article class="card guide-card">
-            <h3>Guía Mundial 2026 – Viaja mejor, disfruta más</h3>
-            <p>Guía práctica para personas que van a viajar al Mundial 2026 y quieren organizar su experiencia de forma clara, segura y sin complicaciones.</p>
-
-            <div class="mini-faq">
-              <h4 class="mini-faq-title">Preguntas rápidas</h4>
-              <ul class="mini-faq-list">
-                <li><b>¿Es solo para fans?</b> No: es para viajar mejor y sin improvisar.</li>
-                <li><b>¿Me sirve si es mi primer mundial?</b> Especialmente: te ahorra errores y estrés.</li>
-                <li><b>¿Es info general?</b> No: es práctica y pensada para usar antes y durante el viaje.</li>
-              </ul>
+              <button type="button" class="btn-secondary" disabled aria-disabled="true">Quiero esta guía</button>
             </div>
-
-            <a class="btn-secondary btn-full" data-guide="mundial" href="#" target="_blank" rel="noopener">Quiero esta guía</a>
           </article>
         </div>
 
@@ -446,7 +599,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <div class="logo-circle footer-logo"><img src="assets/logo/logo-principal-oscuro.png" alt="TextoPro Studio" class="logo-img" /></div>
+        <div class="logo-circle footer-logo"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" width="400" height="400" class="logo-img" /></div>
         <span class="brand-main">TextoPro Studio</span>
       </div>
       <nav class="footer-nav" aria-label="Navegación del pie de página">
@@ -485,5 +638,8 @@
   </div>
 
 <script src="js/main.js" defer></script>
+<script src="js/vivo-base.js" defer></script>
+<script src="js/vivo-inicio.js" defer></script>
+<script src="js/vivo-soluciones.js" defer></script>
 </body>
 </html>

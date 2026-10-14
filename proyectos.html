@@ -8,25 +8,29 @@
   <meta name="theme-color" content="#05060a" />
   <link rel="canonical" href="https://textoprostudio.com/proyectos.html" />
 
-  <link rel="icon" type="image/png" href="assets/logo/favicon.png" />
-  <link rel="apple-touch-icon" href="assets/logo/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/logo/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="TextoPro Studio" />
   <meta property="og:url" content="https://textoprostudio.com/proyectos.html" />
   <meta property="og:title" content="TextoPro Studio | Proyectos y Soluciones Digitales" />
   <meta property="og:description" content="Conoce cómo TextoPro Studio transforma necesidades reales en soluciones digitales: estrategia, digitalización y estructura aplicadas a proyectos concretos." />
-  <meta property="og:image" content="https://textoprostudio.com/assets/logo/logo-principal-oscuro.png" />
+  <meta property="og:image" content="https://textoprostudio.com/assets/logo/logo-textopro-og.jpg" />
   <meta name="twitter:card" content="summary" />
 
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/vivo-base.css" />
+  <link rel="stylesheet" href="css/vivo-proyectos.css" />
+  <noscript><link rel="stylesheet" href="css/nojs.css" /></noscript>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="topbar">
     <div class="container topbar-inner">
       <a href="index.html" class="logo-block">
-        <div class="logo-circle"><img src="assets/logo/logo-principal-oscuro.png" alt="TextoPro Studio" class="logo-img" /></div>
+        <div class="logo-circle"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" width="400" height="400" class="logo-img" /></div>
         <div class="logo-text">
           <span class="brand-main">TextoPro Studio</span>
           <span class="brand-tagline">Donde tus ideas alcanzan su mejor versión</span>
@@ -39,7 +43,7 @@
         <span class="nav-toggle-bar"></span>
       </button>
 
-      <nav class="nav" id="siteNav">
+      <nav class="nav" id="siteNav" aria-label="Navegación principal">
         <a href="index.html#soluciones">Soluciones</a>
         <a href="index.html#digitalizacion">Digitalización</a>
         <a href="index.html#ia">IA</a>
@@ -188,25 +192,30 @@
       <div class="container">
         <h2 class="section-title center">Una plataforma, diferentes necesidades.</h2>
         <p class="section-subtitle center">Estructura conceptual, no un diagrama técnico de implementación.</p>
-        <div class="org-tree">
-          <p class="case-label">APC Connect</p>
-          <ul class="tag-list">
-            <li>Cliente</li>
-            <li>Programa Interno</li>
-            <li>Usuarios</li>
-            <li>Roles</li>
-            <li>Módulos</li>
+        <div class="apc" id="apcSchema">
+          <p class="apc-labels"><span class="vivo-badge">Esquema conceptual</span><span class="badge-soon">APC Connect: en desarrollo</span></p>
+          <ul class="apc-root">
+            <li class="apc-item">
+              <span class="apc-node apc-node--root" data-desc="Plataforma digital para la gestión de Programas Internos de Protección Civil.">APC Connect</span>
+              <ul class="apc-l1">
+                <li class="apc-item"><span class="apc-node" data-desc="Elemento contemplado en la estructura conceptual de APC Connect.">Cliente</span></li>
+                <li class="apc-item"><span class="apc-node" data-desc="El proyecto parte de la gestión de un Programa Interno, que puede involucrar información dispersa en distintas áreas.">Programa Interno</span></li>
+                <li class="apc-item"><span class="apc-node" data-desc="La plataforma contempla usuarios, roles, permisos y documentos como parte de su estructura.">Usuarios</span></li>
+                <li class="apc-item"><span class="apc-node" data-desc="La plataforma contempla usuarios, roles, permisos y documentos como parte de su estructura.">Roles</span></li>
+                <li class="apc-item">
+                  <span class="apc-node" data-desc="APC Connect se plantea como una plataforma modular.">Módulos</span>
+                  <ul class="apc-l2">
+                    <li class="apc-item"><span class="apc-node" data-desc="Módulo considerado en el concepto de APC Connect, que está en desarrollo.">Brigadistas</span></li>
+                    <li class="apc-item"><span class="apc-node" data-desc="Módulo considerado en el concepto de APC Connect, que está en desarrollo.">Inventarios</span></li>
+                    <li class="apc-item"><span class="apc-node" data-desc="Módulo considerado en el concepto de APC Connect, que está en desarrollo.">Mantenimiento</span></li>
+                    <li class="apc-item"><span class="apc-node" data-desc="Módulo considerado en el concepto de APC Connect, que está en desarrollo.">Riesgos</span></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
           </ul>
-          <div class="org-tree-branch">
-            <p class="case-label">Módulos</p>
-            <ul class="tag-list">
-              <li>Brigadistas</li>
-              <li>Inventarios</li>
-              <li>Mantenimiento</li>
-              <li>Riesgos</li>
-            </ul>
-          </div>
         </div>
+        <p class="small-note apc-note">* Esquema conceptual: no es un diagrama técnico de implementación ni una captura del producto. APC Connect está en desarrollo y los elementos mostrados no confirman funciones disponibles.</p>
       </div>
     </section>
 
@@ -277,7 +286,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <div class="logo-circle footer-logo"><img src="assets/logo/logo-principal-oscuro.png" alt="TextoPro Studio" class="logo-img" /></div>
+        <div class="logo-circle footer-logo"><img src="assets/logo/logo-textopro-studio.webp" alt="TextoPro Studio" width="400" height="400" class="logo-img" /></div>
         <span class="brand-main">TextoPro Studio</span>
       </div>
       <nav class="footer-nav" aria-label="Navegación del pie de página">
@@ -316,5 +325,7 @@
   </div>
 
 <script src="js/main.js" defer></script>
+<script src="js/vivo-base.js" defer></script>
+<script src="js/vivo-proyectos.js" defer></script>
 </body>
 </html>
