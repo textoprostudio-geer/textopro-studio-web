@@ -591,3 +591,27 @@
   .guide-cover{ max-width: 230px; margin-inline: auto; }
   .guide-cover--soon{ max-width: 140px; }
 }
+
+/* ===== Digitalización (Inicio): imagen del emprendedor con la interfaz holográfica =====
+   El recuadro reserva su proporción (sin saltos de diseño); object-fit: cover recorta el exceso de fondo oscuro
+   y object-position mantiene visibles el rostro, la mano y los paneles de la interfaz. */
+.digi-photo{
+  margin: 0;
+  aspect-ratio: 7 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(110, 231, 255, 0.24);
+  background: #050b1f;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 34px rgba(50, 177, 255, 0.14);
+}
+.digi-photo img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 78% 40%;
+}
+/* Pantallas estrechas: proporción natural de la imagen (3:2), sin recortes */
+@media (max-width: 900px){
+  .digi-photo{ aspect-ratio: 3 / 2; }
+}
