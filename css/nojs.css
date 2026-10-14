@@ -43,3 +43,7 @@
 .hero-info li,
 .hero-info li:first-child{ grid-area: auto; visibility: visible; opacity: 1; }
 .hero-touch-hint{ display: none; }
+
+/* TextoPro Lab (selector y paneles de herramientas): necesitan JavaScript; sin él se ocultan y la página lo explica */
+.lab-index,
+.lab-panels{ display: none; }
